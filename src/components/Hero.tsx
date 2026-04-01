@@ -1,57 +1,169 @@
-import DetroitSkyline from "./DetroitSkyline";
+import { useRef, useMemo } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
+
+const Particles = () => {
+  const ref = useRef<THREE.Points>(null);
+  const positions = useMemo(() => {
+    const arr = new Float32Array(180 * 3);
+    for (let i = 0; i < 180; i++) {
+      arr[i * 3] = (Math.random() - 0.5) * 14;
+      arr[i * 3 + 1] = (Math.random() - 0.5) * 10;
+      arr[i * 3 + 2] = (Math.random() - 0.5) * 6 - 2;
+    }
+    return arr;
+  }, []);
+
+  useFrame((_, delta) => {
+    if (ref.current) {
+      ref.current.rotation.y += delta * 0.03;
+      ref.current.rotation.x += delta * 0.015;
+    }
+  });
+
+  return (
+    <points ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+      </bufferGeometry>
+      <pointsMaterial color="#12C4B0" size={0.028} transparent opacity={0.55} />
+    </points>
+  );
+};
+
+const OrbGroup = () => {
+  const groupRef = useRef<THREE.Group>(null);
+  const torusRef = useRef<THREE.Mesh>(null);
+  const torus2Ref = useRef<THREE.Mesh>(null);
+  const icoRef = useRef<THREE.Mesh>(null);
+
+  useFrame((_, delta) => {
+    if (icoRef.current) {
+      icoRef.current.rotation.x += delta * 0.25;
+      icoRef.current.rotation.y += delta * 0.35;
+    }
+    if (torusRef.current) torusRef.current.rotation.z += delta * 0.3;
+    if (torus2Ref.current) {
+      torus2Ref.current.rotation.x += delta * 0.22;
+      torus2Ref.current.rotation.z += delta * 0.18;
+    }
+  });
+
+  return (
+    <group ref={groupRef} position={[2.2, 0, 0]}>
+      <mesh ref={icoRef}>
+        <icosahedronGeometry args={[1.8, 1]} />
+        <meshBasicMaterial color="#12C4B0" wireframe transparent opacity={0.18} />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[1.1, 64, 64]} />
+        <meshPhongMaterial
+          color="#0A9B8B"
+          transparent
+          opacity={0.12}
+          shininess={120}
+          specular={new THREE.Color("#12C4B0")}
+          side={THREE.DoubleSide}
+        />
+      </mesh>
+      <mesh ref={torusRef} rotation={[Math.PI / 2.4, 0, 0]}>
+        <torusGeometry args={[1.55, 0.018, 16, 100]} />
+        <meshBasicMaterial color="#12C4B0" transparent opacity={0.55} />
+      </mesh>
+      <mesh ref={torus2Ref} rotation={[Math.PI / 3, Math.PI / 4, 0]}>
+        <torusGeometry args={[1.35, 0.012, 16, 100]} />
+        <meshBasicMaterial color="#12C4B0" transparent opacity={0.3} />
+      </mesh>
+    </group>
+  );
+};
+
+const HeroScene = () => (
+  <Canvas
+    camera={{ position: [0, 0, 5], fov: 60 }}
+    style={{ position: "absolute", inset: 0, zIndex: 0 }}
+    gl={{ antialias: true, alpha: true }}
+  >
+    <ambientLight intensity={0.15} />
+    <directionalLight position={[3, 4, 3]} color="#12C4B0" intensity={1.2} />
+    <directionalLight position={[-3, -2, -2]} intensity={0.4} />
+    <pointLight position={[2, 1, 3]} color="#12C4B0" intensity={1.5} distance={12} />
+    <OrbGroup />
+    <Particles />
+  </Canvas>
+);
 
 const stats = [
-  { num: "$276K", label: "Conservative Annual Floor" },
+  { num: "$276K", label: "Annual Conservative Floor" },
   { num: "26", label: "States of Policy Depth" },
-  { num: "100×", label: "Michigan Grants Secured", teal: true },
+  { num: "100×", label: "Michigan Grants Secured", accent: true },
   { num: "3", label: "Parallel Revenue Streams" },
   { num: "$0", label: "Cold Outreach Required" },
 ];
 
 const Hero = () => (
-  <section className="bg-dark px-6 md:px-[60px] pt-[72px] pb-[60px] border-b-[3px] border-primary relative overflow-hidden">
-    {/* Animated grid */}
-    <div className="hero-grid" />
-    {/* Top fade */}
-    <div className="hero-top-fade" />
+  <section className="min-h-screen relative overflow-hidden flex items-center bg-ink">
+    <HeroScene />
 
-    {/* Detroit skyline */}
-    <div className="detroit-wrap">
-      <div className="detroit-glow" />
-      <DetroitSkyline />
-      <div className="detroit-reflection" />
-      <div className="water-line" />
+    {/* Sweep overlays */}
+    <div className="absolute inset-0 z-[1] pointer-events-none">
+      <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[140%] bg-gradient-to-br from-primary/[0.08] via-primary/[0.02] to-transparent [clip-path:polygon(0_0,78%_0,100%_100%,0_100%)]" />
+      <div className="absolute -top-[20%] -right-[10%] w-[55%] h-[140%] bg-gradient-to-bl from-white/[0.04] via-primary/[0.02] to-transparent [clip-path:polygon(22%_0,100%_0,100%_100%,0_100%)]" />
+      <div className="absolute inset-0 hero-grid" />
     </div>
 
-    {/* Left sweep to keep text readable */}
-    <div className="sweep-l" />
+    {/* Orb glow */}
+    <div className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[520px] h-[520px] bg-[radial-gradient(circle,_hsla(173,85%,33%,0.14)_0%,_hsla(173,85%,33%,0.04)_40%,_transparent_70%)] animate-[orbpulse_7s_ease-in-out_infinite] pointer-events-none z-[1]" />
 
-    {/* City label */}
-    <div className="city-label">
-      <span className="city-label-text">Detroit, Michigan</span>
-    </div>
+    {/* Content */}
+    <div className="relative z-[3] max-w-[1160px] mx-auto px-6 md:px-[60px] w-full">
+      <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-[22px] flex items-center gap-[14px] opacity-0 animate-[fadeup_0.8s_0.3s_ease_forwards]">
+        <span className="w-9 h-px bg-primary inline-block" />
+        Strategic Growth Blueprint · AI Branding Lab, Inc. · March 2026
+      </p>
 
-    <div className="max-w-[1100px] mx-auto relative z-10">
-      <p className="text-xs font-bold tracking-[0.22em] uppercase text-primary mb-[18px] flex items-center gap-3">
-        <span className="w-7 h-px bg-primary inline-block" />
-        Strategic Growth Blueprint · AI Branding Lab, Inc.
+      <div className="overflow-hidden mb-7">
+        <span className="font-serif text-[clamp(54px,8vw,108px)] font-light text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+          Everything you need
+        </span>
+        <span className="font-serif text-[clamp(54px,8vw,108px)] font-light text-white leading-[0.96] tracking-[-0.02em] block opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.65s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+          is already <em className="italic text-primary not-italic-reset">inside you.</em>
+        </span>
+        <span className="font-serif text-[clamp(54px,8vw,108px)] font-bold text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+          Now let's build it.
+        </span>
+      </div>
+
+      <p className="text-[15px] text-white/[0.38] max-w-[520px] leading-[1.95] mb-[52px] opacity-0 animate-[fadeup_0.8s_1s_ease_forwards]">
+        You hold more intellectual capital than most consulting firms carry in their entire practice. This blueprint maps{" "}
+        <strong className="text-white/[0.68] font-medium">$30,000 in month one</strong>, $276,000 by year end, and a seven-figure portfolio by year two. No cold outreach. No chasing. No corporate systems to answer to.
       </p>
-      <h1 className="font-serif text-[clamp(44px,6vw,82px)] font-bold text-white leading-[1.02] mb-5 max-w-[820px]">
-        Everything you need<br />is already <em className="italic text-primary">inside you.</em>
-      </h1>
-      <p className="text-base text-white/[0.42] max-w-[580px] leading-[1.88] mb-[52px]">
-        You have more intellectual capital than most consulting firms hold in their entire practice. This blueprint shows you exactly who to call, what to charge, and how to build <strong className="text-white/70 font-semibold">$30,000 in month one</strong> and a seven-figure business by year two. No cold outreach. No chasing. No corporate systems to answer to.
-      </p>
-      <div className="grid grid-cols-2 md:grid-cols-5 border border-white/[0.06]">
+
+      <div className="flex gap-[14px] items-center mb-[72px] opacity-0 animate-[fadeup_0.8s_1.1s_ease_forwards]">
+        <a href="#start" className="text-[11px] font-bold tracking-[0.18em] uppercase py-4 px-10 bg-primary text-ink no-underline transition-all duration-300 shadow-[0_0_60px_hsla(173,85%,33%,0.25),_0_0_120px_hsla(173,85%,33%,0.1)] hover:bg-white hover:-translate-y-[3px] hover:shadow-[0_28px_80px_hsla(173,85%,33%,0.5)]">
+          Schedule Strategy Call
+        </a>
+        <a href="#revenue" className="text-[11px] font-semibold tracking-[0.14em] uppercase py-[15px] px-8 border border-white/[0.16] text-white/[0.55] no-underline transition-all duration-300 hover:border-primary hover:text-primary">
+          View Revenue Model
+        </a>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-5 border border-white/[0.07] opacity-0 animate-[fadeup_0.8s_1.2s_ease_forwards]">
         {stats.map((s, i) => (
-          <div key={i} className="text-center py-6 px-3 border-r border-white/[0.06] last:border-r-0 transition-colors hover:bg-primary/[0.06]">
-            <div className={`font-serif font-bold leading-none mb-[7px] ${s.teal ? 'text-primary text-[46px]' : 'text-white text-[40px]'}`}>
+          <div key={i} className="py-6 px-[18px] text-center bg-white/[0.018] backdrop-blur-[10px] border-r border-white/[0.07] last:border-r-0 transition-colors hover:bg-primary/[0.07]">
+            <div className={`font-serif font-bold leading-none mb-[7px] ${s.accent ? "text-primary text-[46px]" : "text-white text-[40px]"}`}>
               {s.num}
             </div>
-            <div className="text-xs font-semibold tracking-[0.14em] uppercase text-white/[0.28]">{s.label}</div>
+            <div className="text-[9px] font-semibold tracking-[0.15em] uppercase text-white/[0.26]">{s.label}</div>
           </div>
         ))}
       </div>
+    </div>
+
+    {/* Scroll indicator */}
+    <div className="absolute bottom-9 left-1/2 -translate-x-1/2 z-[3] flex flex-col items-center gap-2">
+      <span className="text-[9px] tracking-[0.22em] uppercase text-white/25 font-semibold">Scroll</span>
+      <div className="w-px h-10 bg-gradient-to-b from-primary/50 to-transparent animate-[scrollpulse_2s_ease-in-out_infinite]" />
     </div>
   </section>
 );
