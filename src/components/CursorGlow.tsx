@@ -1,58 +1,46 @@
 import { useEffect, useRef } from "react";
 
 const CursorGlow = () => {
-  const glowRef = useRef<HTMLDivElement>(null);
-  const trailRef = useRef<HTMLDivElement>(null);
-  const pos = useRef({ x: 0, y: 0 });
-  const target = useRef({ x: 0, y: 0 });
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
-      target.current = { x: e.clientX, y: e.clientY };
-      if (glowRef.current) {
-        glowRef.current.style.left = e.clientX + "px";
-        glowRef.current.style.top = e.clientY + "px";
+      if (cursorRef.current) {
+        cursorRef.current.style.left = e.clientX + "px";
+        cursorRef.current.style.top = e.clientY + "px";
       }
     };
     document.addEventListener("mousemove", onMove);
+    document.body.style.cursor = "none";
 
-    let raf: number;
-    const animate = () => {
-      pos.current.x += (target.current.x - pos.current.x) * 0.08;
-      pos.current.y += (target.current.y - pos.current.y) * 0.08;
-      if (trailRef.current) {
-        trailRef.current.style.left = pos.current.x + "px";
-        trailRef.current.style.top = pos.current.y + "px";
-      }
-      raf = requestAnimationFrame(animate);
-    };
-    raf = requestAnimationFrame(animate);
+    // Hide cursor on all interactive elements too
+    const style = document.createElement("style");
+    style.textContent = "*, *::before, *::after { cursor: none !important; }";
+    document.head.appendChild(style);
 
     return () => {
       document.removeEventListener("mousemove", onMove);
-      cancelAnimationFrame(raf);
+      document.body.style.cursor = "";
+      style.remove();
     };
   }, []);
 
   return (
-    <>
-      {/* Outer trailing glow */}
+    <div
+      ref={cursorRef}
+      className="fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 top-0 left-0"
+    >
+      {/* Outer circle */}
       <div
-        ref={trailRef}
-        className="fixed pointer-events-none z-[9998] w-[600px] h-[600px] rounded-full -translate-x-1/2 -translate-y-1/2 top-0 left-0"
-        style={{
-          background: "radial-gradient(circle, hsla(173,85%,33%,0.07) 0%, hsla(173,85%,33%,0.03) 35%, transparent 65%)",
-        }}
+        className="w-10 h-10 rounded-full border-2"
+        style={{ borderColor: "hsl(var(--primary))" }}
       />
-      {/* Inner bright glow */}
+      {/* Center dot */}
       <div
-        ref={glowRef}
-        className="fixed pointer-events-none z-[9999] w-[350px] h-[350px] rounded-full -translate-x-1/2 -translate-y-1/2 top-0 left-0"
-        style={{
-          background: "radial-gradient(circle, hsla(173,85%,33%,0.15) 0%, hsla(173,85%,33%,0.06) 30%, transparent 60%)",
-        }}
+        className="absolute top-1/2 left-1/2 w-[5px] h-[5px] rounded-full -translate-x-1/2 -translate-y-1/2"
+        style={{ backgroundColor: "hsl(var(--primary))" }}
       />
-    </>
+    </div>
   );
 };
 
