@@ -100,19 +100,29 @@ const RevenueProjection = () => {
         </div>
       </div>
 
-      <div className="bg-dark p-7 md:p-[28px_36px] mb-7 grid grid-cols-1 md:grid-cols-3 gap-7 border-l-[3px] border-primary">
-        <div>
-          <div className="text-xs tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Conservative Scenario</div>
-          <p className="text-sm text-white/[0.38] leading-[1.8]">One retainer + VIP Grant Strategy Day + hourly advisory block. Warm-network only. Assumes 30-day close cycle. $30,000 month one. $138,000 by month 12 run rate. Zero cold outreach required.</p>
-        </div>
-        <div>
-          <div className="text-xs tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Moderate Scenario (Recommended)</div>
-          <p className="text-sm text-white/[0.38] leading-[1.8]">Two retainers locked by day 30 plus ongoing VIP days and corporate workshops. LinkedIn content warming the pipeline. $276K recurring plus project revenue by Q3.</p>
-        </div>
-        <div>
-          <div className="text-xs tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Aggressive Scenario</div>
-          <p className="text-sm text-white/[0.38] leading-[1.8]">Three retainers plus equity advisory plus DPS procurement contract activated. Full venture portfolio running. Requires 15 to 20 hours per week across all streams. $500K+ run rate by month nine.</p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-7">
+        {[
+          {
+            title: "Conservative Scenario",
+            body: "One retainer + VIP Grant Strategy Day + hourly advisory block. Warm-network only. Assumes 30-day close cycle. $30,000 month one. $138,000 by month 12 run rate. Zero cold outreach required.",
+          },
+          {
+            title: "Moderate Scenario (Recommended)",
+            body: "Two retainers locked by day 30 plus ongoing VIP days and corporate workshops. LinkedIn content warming the pipeline. $276K recurring plus project revenue by Q3.",
+          },
+          {
+            title: "Aggressive Scenario",
+            body: "Three retainers plus equity advisory plus DPS procurement contract activated. Full venture portfolio running. Requires 15 to 20 hours per week across all streams. $500K+ run rate by month nine.",
+          },
+        ].map((s, i) => (
+          <div
+            key={i}
+            className="group bg-white border border-border p-7 shadow-sm transition-all duration-500 hover:bg-dark hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden card-bar-reveal"
+          >
+            <div className="text-xs tracking-[0.18em] uppercase font-bold text-primary mb-3">{s.title}</div>
+            <p className="text-sm text-ink leading-[1.8] transition-colors duration-500 group-hover:text-white/80">{s.body}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
