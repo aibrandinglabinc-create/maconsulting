@@ -85,7 +85,13 @@
 }
 
 .ticker-animate {
-  animation: tick 70s linear infinite;
+  animation: tick 75s linear infinite;
+}
+
+/* Ticker glow line */
+@keyframes tglide {
+  0%,100% { opacity: 0.3; transform: scaleX(0.3); }
+  50% { opacity: 1; transform: scaleX(1); }
 }
 
 /* Fade up animation */
@@ -147,92 +153,30 @@
   transform: scaleX(1);
 }
 
-/* Detroit skyline hero */
+/* Hero grid */
 .hero-grid {
   position: absolute; inset: 0; z-index: 0;
   background-image:
-    linear-gradient(hsla(173, 85%, 33%, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, hsla(173, 85%, 33%, 0.03) 1px, transparent 1px);
-  background-size: 72px 72px;
-  animation: gridrift 60s linear infinite;
+    linear-gradient(hsla(173, 85%, 33%, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(173, 85%, 33%, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridrift 50s linear infinite;
 }
-@keyframes gridrift { 0%{background-position:0 0} 100%{background-position:72px 72px} }
+@keyframes gridrift { 0%{background-position:0 0} 100%{background-position:60px 60px} }
 
-.hero-top-fade {
-  position: absolute; top: 0; left: 0; right: 0; height: 28%;
-  background: linear-gradient(180deg, hsl(var(--dark)) 0%, transparent 100%);
-  z-index: 1; pointer-events: none;
-}
-
-.detroit-wrap {
-  position: absolute; right: 0; bottom: 0; width: 68%; height: 90%;
-  z-index: 1; display: flex; align-items: flex-end;
-}
-
-.detroit-glow {
-  position: absolute; bottom: 0; right: 0; left: 0; height: 50%;
-  background: radial-gradient(ellipse at 60% 100%, hsla(173, 85%, 33%, 0.14) 0%, hsla(173, 85%, 33%, 0.04) 40%, transparent 70%);
-  pointer-events: none; z-index: 0;
-  animation: dglowpulse 7s ease-in-out infinite;
-}
-@keyframes dglowpulse { 0%,100%{opacity:.7} 50%{opacity:1} }
-
-.detroit-reflection {
-  position: absolute; bottom: 0; right: 0; left: 0; height: 90px;
-  background: linear-gradient(180deg, transparent 0%, hsla(173, 85%, 33%, 0.04) 60%, hsla(173, 85%, 33%, 0.08) 100%);
-  z-index: 2; pointer-events: none;
-}
-
-.water-line {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent 0%, hsla(173, 85%, 33%, 0.35) 20%, hsla(173, 85%, 33%, 0.6) 50%, hsla(173, 85%, 33%, 0.35) 80%, transparent 100%);
-  z-index: 3; pointer-events: none;
-}
-
-#detroit-svg { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
-
-/* Skyline SVG styles */
-.sp { fill: none; stroke: hsl(var(--primary)); stroke-width: 1.2; stroke-linecap: square; stroke-linejoin: miter; filter: drop-shadow(0 0 4px hsla(173, 85%, 33%, 0.6)) drop-shadow(0 0 12px hsla(173, 85%, 33%, 0.3)); }
-.sf { fill: hsla(0, 0%, 3%, 0.94); stroke: none; }
-.sa { fill: none; stroke: hsla(173, 85%, 33%, 0.32); stroke-width: 0.6; filter: drop-shadow(0 0 5px hsla(173, 85%, 33%, 0.35)); }
-.wg { fill: hsla(173, 85%, 33%, 0.2); animation: wblink 3s ease-in-out infinite; }
-.wg:nth-child(2n) { animation-delay: 0.8s; }
-.wg:nth-child(3n) { animation-delay: 1.6s; animation-duration: 4s; }
-.wg:nth-child(5n) { animation-delay: 2.4s; animation-duration: 3.5s; }
-@keyframes wblink { 0%,100%{opacity:.15} 50%{opacity:.5} }
-.bl { opacity: 0; animation: blinkOn 0s forwards; }
-@keyframes blinkOn { to { opacity: .8; } }
-
-/* Draw-in animation */
-.dp { stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: drawIn 4s cubic-bezier(.4,0,.2,1) forwards; }
-.dp.d1 { animation-delay: .2s; }
-.dp.d2 { animation-delay: .5s; animation-duration: 3.5s; }
-.dp.d3 { animation-delay: .8s; animation-duration: 3.2s; }
-.dp.d4 { animation-delay: 1.1s; animation-duration: 2.8s; }
-.dp.d5 { animation-delay: 1.4s; animation-duration: 2.5s; }
-@keyframes drawIn { to { stroke-dashoffset: 0; } }
-
-/* Left sweep fade */
-.sweep-l {
-  position: absolute; top: 0; left: 0; bottom: 0; width: 55%;
-  background: linear-gradient(to right, hsla(0, 0%, 3%, 1) 0%, hsla(0, 0%, 3%, 0.96) 55%, hsla(0, 0%, 3%, 0.5) 80%, transparent 100%);
-  z-index: 2; pointer-events: none;
-}
-
-/* City label */
-.city-label {
-  position: absolute; bottom: 110px; right: 60px; z-index: 5;
-  opacity: 0; animation: fadeup 0.8s 2.8s ease forwards;
-}
+/* Hero animations */
 @keyframes fadeup { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.city-label-text {
-  font-family: var(--font-sans); font-size: 9px; font-weight: 700;
-  letter-spacing: 0.36em; text-transform: uppercase; color: hsla(173, 85%, 33%, 0.45);
-  display: flex; align-items: center; gap: 12px; justify-content: flex-end;
-}
-.city-label-text::after { content: ''; width: 40px; height: 1px; background: hsla(173, 85%, 33%, 0.35); }
+@keyframes slideup { to { opacity: 1; transform: translateY(0); } }
+@keyframes orbpulse { 0%,100%{transform:translateY(-50%) scale(1);opacity:.8} 50%{transform:translateY(-50%) scale(1.06);opacity:1} }
+@keyframes scrollpulse { 0%,100%{opacity:.4} 50%{opacity:1} }
 
-@media(max-width:900px) {
-  .detroit-wrap { width: 100%; opacity: 0.2; }
-  .sweep-l { width: 100%; background: linear-gradient(to right, hsla(0, 0%, 3%, 1) 0%, hsla(0, 0%, 3%, 0.95) 100%); }
+/* Scroll reveal */
+.sr {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.72s ease, transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sr.on {
+  opacity: 1;
+  transform: translateY(0);
 }
