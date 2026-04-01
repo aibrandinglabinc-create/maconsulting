@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Building2, Target, Rocket } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 
 const avatars = [
   {
-    icon: "🏥",
+    icon: Building2,
     title: "ICA 1 — Healthcare & Workforce Systems",
     subtitle: "Trinity-type orgs, FQHCs, state workforce boards",
     snap: [
