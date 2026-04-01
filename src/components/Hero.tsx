@@ -123,30 +123,21 @@ const Hero = () => (
       </p>
 
       <div className="overflow-hidden mb-7">
-        <span className="font-serif text-[clamp(54px,8vw,108px)] font-light text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+        <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-light text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
           Everything you need
         </span>
-        <span className="font-serif text-[clamp(54px,8vw,108px)] font-light text-white leading-[0.96] tracking-[-0.02em] block opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.65s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+        <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-light text-white leading-[0.96] tracking-[-0.02em] block opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.65s_cubic-bezier(0.16,1,0.3,1)_forwards]">
           is already <em className="italic text-primary not-italic-reset">inside you.</em>
         </span>
-        <span className="font-serif text-[clamp(54px,8vw,108px)] font-bold text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+        <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-bold text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
           Now let's build it.
         </span>
       </div>
 
-      <p className="text-[15px] text-white/[0.38] max-w-[520px] leading-[1.95] mb-[52px] opacity-0 animate-[fadeup_0.8s_1s_ease_forwards]">
+      <p className="text-[15px] text-white/[0.75] max-w-[520px] leading-[1.95] mb-[72px] opacity-0 animate-[fadeup_0.8s_1s_ease_forwards]">
         You hold more intellectual capital than most consulting firms carry in their entire practice. This blueprint maps{" "}
-        <strong className="text-white/[0.68] font-medium">$30,000 in month one</strong>, $276,000 by year end, and a seven-figure portfolio by year two. No cold outreach. No chasing. No corporate systems to answer to.
+        <strong className="text-white font-medium">$30,000 in month one</strong>, $276,000 by year end, and a seven-figure portfolio by year two. No cold outreach. No chasing. No corporate systems to answer to.
       </p>
-
-      <div className="flex gap-[14px] items-center mb-[72px] opacity-0 animate-[fadeup_0.8s_1.1s_ease_forwards]">
-        <a href="#start" className="text-[11px] font-bold tracking-[0.18em] uppercase py-4 px-10 bg-primary text-ink no-underline transition-all duration-300 shadow-[0_0_60px_hsla(173,85%,33%,0.25),_0_0_120px_hsla(173,85%,33%,0.1)] hover:bg-white hover:-translate-y-[3px] hover:shadow-[0_28px_80px_hsla(173,85%,33%,0.5)]">
-          Schedule Strategy Call
-        </a>
-        <a href="#revenue" className="text-[11px] font-semibold tracking-[0.14em] uppercase py-[15px] px-8 border border-white/[0.16] text-white/[0.55] no-underline transition-all duration-300 hover:border-primary hover:text-primary">
-          View Revenue Model
-        </a>
-      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-5 border border-white/[0.07] opacity-0 animate-[fadeup_0.8s_1.2s_ease_forwards]">
         {stats.map((s, i) => (

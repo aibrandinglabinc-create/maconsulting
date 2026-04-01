@@ -137,24 +137,14 @@ const CatalystSection = () => (
       </div>
 
       {/* CTA Row */}
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-10 pt-12 border-t border-primary/[0.12]">
-        <div>
-          <h3 className="font-serif text-4xl font-light text-white leading-[1.15] uppercase tracking-[0.02em] mb-[10px]">
-            Ready to <strong className="font-bold">Activate</strong><br />
-            the Ecosystem?
-          </h3>
-          <p className="text-[13px] text-white/30 leading-[1.8] max-w-[500px]">
-            The C.A.T.A.L.Y.S.T.™ infrastructure is built. The 50 leads are mapped. The sequences are ready to run. What is missing is the conversation that starts all of it.
-          </p>
-        </div>
-        <div className="flex flex-col md:items-end gap-3">
-          <a href="#start" className="text-[11px] font-bold tracking-[0.18em] uppercase py-4 px-9 bg-primary text-ink no-underline transition-all duration-300 shadow-[0_0_40px_hsla(173,85%,33%,0.25)] hover:bg-white hover:-translate-y-[2px] hover:shadow-[0_16px_60px_hsla(173,85%,33%,0.45)] whitespace-nowrap text-center">
-            Schedule Strategy Call
-          </a>
-          <a href="#revenue" className="text-[11px] font-semibold tracking-[0.14em] uppercase py-[15px] px-7 border border-white/[0.14] text-white/[0.45] no-underline transition-all duration-300 hover:border-primary hover:text-primary whitespace-nowrap text-center">
-            View Revenue Model
-          </a>
-        </div>
+      <div className="pt-12 border-t border-primary/[0.12]">
+        <h3 className="font-serif text-4xl font-light text-white leading-[1.15] uppercase tracking-[0.02em] mb-[10px]">
+          Ready to <strong className="font-bold">Activate</strong><br />
+          the Ecosystem?
+        </h3>
+        <p className="text-[13px] text-white/30 leading-[1.8] max-w-[500px]">
+          The C.A.T.A.L.Y.S.T.™ infrastructure is built. The 50 leads are mapped. The sequences are ready to run. What is missing is the conversation that starts all of it.
+        </p>
       </div>
     </div>
   </section>
