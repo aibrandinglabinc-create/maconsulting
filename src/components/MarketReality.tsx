@@ -41,13 +41,22 @@ const MarketReality = () => (
       subtitle="You do not need to compete for clients. You need to position correctly so the right clients find you. Here is what makes you irreplaceable."
     />
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-9">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-9">
       {opportunities.map((opp, i) => (
-        <div key={i} className="group bg-dark border border-white/[0.08] p-[30px_26px] relative overflow-hidden card-bar-reveal shadow-sm hover:bg-card hover:border-primary/30 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_hsla(173,85%,33%,0.25)] transition-all duration-700 ease-out cursor-pointer">
-          <opp.icon className="w-7 h-7 mb-4 text-primary/60 group-hover:text-primary transition-colors duration-700" strokeWidth={1.5} />
-          <div className="font-serif text-[58px] font-bold text-primary leading-none mb-[6px] tracking-tight">{opp.num}</div>
-          <div className="text-sm font-bold tracking-[0.16em] uppercase text-white/50 group-hover:text-ink mb-[10px] transition-colors duration-700">{opp.label}</div>
-          <p className="text-base text-white/40 group-hover:text-foreground leading-[1.75] transition-colors duration-700">{opp.body}</p>
+        <div key={i} className="group relative bg-dark border border-white/[0.06] p-[34px_28px] overflow-hidden cursor-pointer transition-all duration-700 ease-out hover:scale-[1.02] hover:-translate-y-1 hover:shadow-[0_24px_80px_-16px_hsla(173,85%,33%,0.2)]">
+          {/* Teal top border reveal */}
+          <div className="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+          {/* Teal bottom border reveal */}
+          <div className="absolute bottom-0 right-0 w-full h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-right" />
+          {/* Left accent line */}
+          <div className="absolute top-0 left-0 h-full w-[2px] bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-700 delay-100 origin-top" />
+          {/* Right accent line */}
+          <div className="absolute top-0 right-0 h-full w-[2px] bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-700 delay-100 origin-bottom" />
+
+          <opp.icon className="w-7 h-7 mb-5 text-primary/40 group-hover:text-primary transition-colors duration-700" strokeWidth={1.5} />
+          <div className="font-serif text-[54px] font-bold text-primary leading-none mb-2 tracking-tight">{opp.num}</div>
+          <div className="text-xs font-bold tracking-[0.18em] uppercase text-white/30 group-hover:text-primary/80 mb-3 transition-colors duration-700">{opp.label}</div>
+          <p className="text-sm text-white/35 group-hover:text-white/70 leading-[1.8] transition-colors duration-700">{opp.body}</p>
         </div>
       ))}
     </div>
