@@ -45,7 +45,7 @@ const avatars = [
     ],
   },
   {
-    icon: "🎯",
+    icon: Target,
     title: "ICA 2 — Mission-Driven Nonprofits",
     subtitle: "Reentry orgs, workforce nonprofits, community foundations",
     snap: [
