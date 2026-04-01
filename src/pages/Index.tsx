@@ -3,6 +3,7 @@ import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import PrepBand from "@/components/PrepBand";
 import CatalystSection from "@/components/CatalystSection";
+import DetroitDivider from "@/components/DetroitDivider";
 import MarketReality from "@/components/MarketReality";
 import RevenueProjection from "@/components/RevenueProjection";
 import MonthOneScenarios from "@/components/MonthOneScenarios";
@@ -22,6 +23,7 @@ const Index = () => (
     <Hero />
     <PrepBand />
     <CatalystSection />
+    <DetroitDivider />
     <div className="max-w-[1160px] mx-auto px-6 py-10 space-y-16">
       <MarketReality />
       <RevenueProjection />
