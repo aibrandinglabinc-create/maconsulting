@@ -86,7 +86,7 @@ const avatars = [
     ],
   },
   {
-    icon: "💻",
+    icon: Rocket,
     title: "ICA 3 — Workforce Venture Partners",
     subtitle: "Workforce startups, advisory engagements, equity plays",
     snap: [
