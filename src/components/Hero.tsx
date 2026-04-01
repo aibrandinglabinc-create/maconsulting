@@ -102,7 +102,7 @@ const stats = [
 ];
 
 const Hero = () => (
-  <section className="min-h-screen relative overflow-hidden flex items-center bg-ink">
+  <section className="hero-section min-h-screen relative overflow-hidden flex items-center bg-ink">
     <HeroScene />
 
     {/* Sweep overlays */}
