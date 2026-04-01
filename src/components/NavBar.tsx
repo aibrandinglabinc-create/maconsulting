@@ -10,16 +10,23 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      const heroEl = document.querySelector('.hero-section');
+      if (heroEl) {
+        setVisible(window.scrollY > heroEl.getBoundingClientRect().height - 60);
+      } else {
+        setVisible(window.scrollY > window.innerHeight - 60);
+      }
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <nav className={`sticky top-0 z-[200] bg-ink/85 backdrop-blur-[28px] backdrop-saturate-[180%] border-b border-primary/15 px-6 md:px-[60px] transition-shadow ${scrolled ? "shadow-lg" : ""}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[200] bg-ink/85 backdrop-blur-[28px] backdrop-saturate-[180%] border-b border-primary/15 px-6 md:px-[60px] transition-all duration-500 ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}>
       <div className="max-w-[1160px] mx-auto flex items-center justify-between h-[58px]">
         <div className="text-[13px] font-bold text-white tracking-[0.28em] uppercase cursor-pointer">
           MA · <span className="text-primary">CONSULTING</span>
