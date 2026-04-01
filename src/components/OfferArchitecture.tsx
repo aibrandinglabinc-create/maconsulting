@@ -10,7 +10,7 @@ const tiers = [
       "Organizations needing immediate funding clarity before committing to a retainer",
       "Healthcare systems exploring Fair Chance hiring strategy",
       "Nonprofits unsure of their grant eligibility landscape",
-      "Tech founders needing a practitioner gut-check on their product",
+      "Leaders needing a practitioner gut-check on their workforce programs",
     ],
     exec: "Your highest-margin, lowest-time offer. Six hours. One deliverable: a complete Funding and Implementation Roadmap. This is your paid discovery process that converts to retainers at a high rate.",
     featured: false,
@@ -35,12 +35,12 @@ const tiers = [
     price: "$5,000–$10,000/month plus 2% to 5% equity stake",
     who: "Best For",
     items: [
-      "Workforce tech founders building products reliant on your practitioner knowledge",
+      "Workforce venture founders building products reliant on your practitioner knowledge",
       "Startups where your IP is foundational to their entire product direction",
       "Founders who have said you are 'core to finalizing the product'",
       "Any engagement where a W-2 offer is on the table (convert it to this)",
     ],
-    exec: "This moves beyond consulting fees entirely. Granted is the first candidate. Your intellectual property is the foundation of their product. You must own a piece of the outcome.",
+    exec: "This moves beyond consulting fees entirely. Your intellectual property is the foundation of their product. You must own a piece of the outcome.",
     featured: false,
   },
 ];
@@ -62,20 +62,20 @@ const OfferArchitecture = () => (
           }`}
         >
           {tier.featured && (
-            <span className="absolute top-[18px] right-[18px] text-[9px] font-bold tracking-[0.1em] uppercase px-[10px] py-1 bg-primary text-white">Primary</span>
+            <span className="absolute top-[18px] right-[18px] text-xs font-bold tracking-[0.1em] uppercase px-[10px] py-1 bg-primary text-white">Primary</span>
           )}
-          <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary mb-[10px]">{tier.num}</div>
+          <div className="text-xs font-bold tracking-[0.16em] uppercase text-primary mb-[10px]">{tier.num}</div>
           <div className="font-serif text-[22px] font-bold text-ink mb-[6px]">{tier.name}</div>
-          <div className="text-xs font-semibold text-primary mb-[18px] pb-[18px] border-b border-border">{tier.price}</div>
-          <div className="text-[9px] font-bold tracking-[0.14em] uppercase text-ash mb-[10px]">{tier.who}</div>
+          <div className="text-sm font-semibold text-primary mb-[18px] pb-[18px] border-b border-border">{tier.price}</div>
+          <div className="text-xs font-bold tracking-[0.14em] uppercase text-ash mb-[10px]">{tier.who}</div>
           <ul className="mb-[18px]">
             {tier.items.map((item, j) => (
-              <li key={j} className="text-xs text-charcoal py-[5px] border-b border-border last:border-b-0 flex gap-2 leading-[1.5]">
-                <span className="text-primary text-[11px] font-bold flex-shrink-0 mt-px">✓</span>{item}
+              <li key={j} className="text-sm text-charcoal py-[5px] border-b border-border last:border-b-0 flex gap-2 leading-[1.5]">
+                <span className="text-primary text-sm font-bold flex-shrink-0 mt-px">✓</span>{item}
               </li>
             ))}
           </ul>
-          <p className="text-xs text-ash italic leading-[1.65] pt-3 border-t border-border">{tier.exec}</p>
+          <p className="text-sm text-ash italic leading-[1.65] pt-3 border-t border-border">{tier.exec}</p>
         </div>
       ))}
     </div>

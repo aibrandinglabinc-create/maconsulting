@@ -17,7 +17,7 @@ const opportunities = [
     icon: "🚀",
     num: "$500K+",
     label: "Venture Portfolio Upside",
-    body: "Beyond consulting, you have three parallel revenue vehicles already in motion: the DPS sole-source procurement with no RFP required, equity in Granted-type tech you are already advising, and the appraisal school that will be your true legacy. None require you to learn anything new.",
+    body: "Beyond consulting, you have three parallel revenue vehicles already in motion: the DPS sole-source procurement with no RFP required, equity in workforce ventures you are already advising, and the appraisal school that will be your true legacy. None require you to learn anything new.",
   },
 ];
 
@@ -45,15 +45,15 @@ const MarketReality = () => (
         <div key={i} className="bg-card border border-border p-[30px_26px] relative overflow-hidden card-lift card-bar-reveal shadow-sm">
           <span className="text-[22px] mb-[14px] block">{opp.icon}</span>
           <div className="font-serif text-[58px] font-bold text-primary leading-none mb-[6px] tracking-tight">{opp.num}</div>
-          <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-ash mb-[10px]">{opp.label}</div>
-          <p className="text-[13px] text-ash leading-[1.75]">{opp.body}</p>
+          <div className="text-xs font-bold tracking-[0.16em] uppercase text-ash mb-[10px]">{opp.label}</div>
+          <p className="text-[15px] text-ash leading-[1.75]">{opp.body}</p>
         </div>
       ))}
     </div>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 mb-12">
       {credentials.map((cred, i) => (
-        <div key={i} className="bg-card border border-border py-3 px-[14px] flex items-start gap-2 text-xs font-medium text-charcoal leading-[1.45] shadow-sm transition-all hover:border-primary hover:shadow-[0_4px_20px_hsla(173,85%,33%,0.1)]">
+        <div key={i} className="bg-card border border-border py-3 px-[14px] flex items-start gap-2 text-sm font-medium text-charcoal leading-[1.45] shadow-sm transition-all hover:border-primary hover:shadow-[0_4px_20px_hsla(173,85%,33%,0.1)]">
           <span className="text-[15px] flex-shrink-0 mt-px">{cred.icon}</span>
           {cred.text}
         </div>

@@ -38,14 +38,14 @@ const RevenueProjection = () => {
         <div className="flex justify-between items-start flex-wrap gap-[14px] mb-7">
           <div>
             <div className="font-serif text-[26px] font-bold text-ink">Revenue Trajectory</div>
-            <div className="text-[11px] text-ash mt-[3px]">Monthly gross revenue by scenario · April 2026 to March 2027</div>
+            <div className="text-sm text-ash mt-[3px]">Monthly gross revenue by scenario · April 2026 to March 2027</div>
           </div>
           <div className="flex gap-[3px]">
             {(["conservative", "moderate", "aggressive"] as Scenario[]).map((s) => (
               <button
                 key={s}
                 onClick={() => setActive(s)}
-                className={`font-sans text-[9px] font-semibold tracking-[0.12em] uppercase px-4 py-2 border transition-all ${
+                className={`font-sans text-xs font-semibold tracking-[0.12em] uppercase px-4 py-2 border transition-all ${
                   active === s
                     ? "border-primary bg-primary text-white"
                     : "border-border bg-transparent text-ash hover:border-primary hover:text-primary"
@@ -63,7 +63,7 @@ const RevenueProjection = () => {
             const height = `${(val / max) * 100}%`;
             return (
               <div key={i} className="flex-1 flex flex-col items-center justify-end h-full">
-                <span className={`text-[8px] mb-1 whitespace-nowrap font-medium ${isPeak ? 'text-primary font-bold' : 'text-ash'}`}>
+                <span className={`text-[11px] mb-1 whitespace-nowrap font-medium ${isPeak ? 'text-primary font-bold' : 'text-ash'}`}>
                   ${val}K
                 </span>
                 <div
@@ -80,21 +80,21 @@ const RevenueProjection = () => {
         </div>
         <div className="flex gap-1 pt-2 px-[2px]">
           {months.map((m) => (
-            <div key={m} className="flex-1 text-center text-[8px] text-ash">{m}</div>
+            <div key={m} className="flex-1 text-center text-[11px] text-ash">{m}</div>
           ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6 pt-5 border-t border-border">
           <div>
-            <div className="text-[9px] text-ash tracking-[0.18em] uppercase mb-[3px]">Month 12 Run Rate</div>
+            <div className="text-xs text-ash tracking-[0.18em] uppercase mb-[3px]">Month 12 Run Rate</div>
             <div className="font-serif text-[30px] font-bold text-ink">{kpis.runRate}</div>
           </div>
           <div>
-            <div className="text-[9px] text-ash tracking-[0.18em] uppercase mb-[3px]">Annualized from Month 12</div>
+            <div className="text-xs text-ash tracking-[0.18em] uppercase mb-[3px]">Annualized from Month 12</div>
             <div className="font-serif text-[30px] font-bold text-primary">{kpis.annual}</div>
           </div>
           <div>
-            <div className="text-[9px] text-ash tracking-[0.18em] uppercase mb-[3px]">$30K Month-One Target</div>
+            <div className="text-xs text-ash tracking-[0.18em] uppercase mb-[3px]">$30K Month-One Target</div>
             <div className="font-serif text-[30px] font-bold text-[#2d8a4e]">{kpis.target}</div>
           </div>
         </div>
@@ -102,16 +102,16 @@ const RevenueProjection = () => {
 
       <div className="bg-dark p-7 md:p-[28px_36px] mb-7 grid grid-cols-1 md:grid-cols-3 gap-7 border-l-[3px] border-primary">
         <div>
-          <div className="text-[9px] tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Conservative Scenario</div>
-          <p className="text-xs text-white/[0.38] leading-[1.8]">One retainer + VIP Grant Strategy Day + hourly advisory block. Warm-network only. Assumes 30-day close cycle. $30,000 month one. $138,000 by month 12 run rate. Zero cold outreach required.</p>
+          <div className="text-xs tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Conservative Scenario</div>
+          <p className="text-sm text-white/[0.38] leading-[1.8]">One retainer + VIP Grant Strategy Day + hourly advisory block. Warm-network only. Assumes 30-day close cycle. $30,000 month one. $138,000 by month 12 run rate. Zero cold outreach required.</p>
         </div>
         <div>
-          <div className="text-[9px] tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Moderate Scenario (Recommended)</div>
-          <p className="text-xs text-white/[0.38] leading-[1.8]">Two retainers locked by day 30 plus ongoing VIP days and corporate workshops. Commission-only SDR activating cold ICA 3 leads. LinkedIn content warming the pipeline. $276K recurring plus project revenue by Q3.</p>
+          <div className="text-xs tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Moderate Scenario (Recommended)</div>
+          <p className="text-sm text-white/[0.38] leading-[1.8]">Two retainers locked by day 30 plus ongoing VIP days and corporate workshops. LinkedIn content warming the pipeline. $276K recurring plus project revenue by Q3.</p>
         </div>
         <div>
-          <div className="text-[9px] tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Aggressive Scenario</div>
-          <p className="text-xs text-white/[0.38] leading-[1.8]">Three retainers plus Granted equity advisory plus DPS procurement contract activated. Full venture portfolio running. Requires 15 to 20 hours per week across all streams. $500K+ run rate by month nine.</p>
+          <div className="text-xs tracking-[0.18em] uppercase font-bold text-primary mb-[10px]">Aggressive Scenario</div>
+          <p className="text-sm text-white/[0.38] leading-[1.8]">Three retainers plus equity advisory plus DPS procurement contract activated. Full venture portfolio running. Requires 15 to 20 hours per week across all streams. $500K+ run rate by month nine.</p>
         </div>
       </div>
     </section>
