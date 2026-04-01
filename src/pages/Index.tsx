@@ -1,7 +1,8 @@
 import Ticker from "@/components/Ticker";
+import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import PrepBand from "@/components/PrepBand";
-import TealBand from "@/components/TealBand";
+import CatalystSection from "@/components/CatalystSection";
 import MarketReality from "@/components/MarketReality";
 import RevenueProjection from "@/components/RevenueProjection";
 import MonthOneScenarios from "@/components/MonthOneScenarios";
@@ -11,14 +12,17 @@ import OfferArchitecture from "@/components/OfferArchitecture";
 import OutreachStrategy from "@/components/OutreachStrategy";
 import TotalBand from "@/components/TotalBand";
 import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
 
 const Index = () => (
   <div className="min-h-screen bg-fog">
+    <CursorGlow />
     <Ticker />
+    <NavBar />
     <Hero />
     <PrepBand />
-    <TealBand />
-    <div className="max-w-[1100px] mx-auto px-6 py-10 space-y-16">
+    <CatalystSection />
+    <div className="max-w-[1160px] mx-auto px-6 py-10 space-y-16">
       <MarketReality />
       <RevenueProjection />
       <MonthOneScenarios />

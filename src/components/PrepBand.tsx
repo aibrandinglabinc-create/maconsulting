@@ -1,21 +1,23 @@
 const PrepBand = () => (
-  <div className="bg-card border-b border-border px-6 md:px-[60px] py-5 flex justify-between items-center flex-wrap gap-[14px] shadow-sm">
-    <div>
-      <div className="text-sm font-semibold tracking-[0.18em] uppercase text-ash mb-1">Blueprint Prepared For</div>
-      <div className="font-serif text-2xl font-bold text-ink uppercase tracking-wide">Margrit Allen</div>
-      <div className="text-base text-primary font-medium mt-px uppercase tracking-wide">Founder, MA Workforce Solutions · Former National Director</div>
-    </div>
-    <div className="w-px h-[38px] bg-border hidden md:block" />
-    <div>
-      <div className="text-sm font-semibold tracking-[0.18em] uppercase text-ash mb-1">Prepared By</div>
-      <div className="font-serif text-2xl font-bold text-ink uppercase tracking-wide">Erika Taylor</div>
-      <div className="text-base text-primary font-medium mt-px uppercase tracking-wide">Chief AI Systems Architect · AI Branding Lab, Inc.</div>
-    </div>
-    <div className="w-px h-[38px] bg-border hidden md:block" />
-    <div>
-      <div className="text-sm font-semibold tracking-[0.18em] uppercase text-ash mb-1">Date & Status</div>
-      <div className="font-serif text-2xl font-bold text-ink uppercase tracking-wide">March 2026</div>
-      <div className="text-base text-primary font-medium mt-px uppercase tracking-wide">Confidential · Not For Distribution</div>
+  <div className="bg-white border-b border-black/[0.08] px-6 md:px-[60px] py-[14px] shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
+    <div className="max-w-[1160px] mx-auto flex justify-between items-center flex-wrap gap-[14px]">
+      <div>
+        <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-ash mb-[2px]">Blueprint For</div>
+        <div className="font-serif text-base font-bold text-ink">Margrit Allen</div>
+        <div className="text-[11px] text-primary font-medium mt-px">Founder, MA Consulting · Former National Director, Trinity Health</div>
+      </div>
+      <div className="w-px h-[34px] bg-black/[0.08] hidden md:block" />
+      <div>
+        <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-ash mb-[2px]">Prepared By</div>
+        <div className="font-serif text-base font-bold text-ink">Erika Taylor</div>
+        <div className="text-[11px] text-primary font-medium mt-px">Chief AI Systems Architect · AI Branding Lab, Inc.</div>
+      </div>
+      <div className="w-px h-[34px] bg-black/[0.08] hidden md:block" />
+      <div>
+        <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-ash mb-[2px]">Classification</div>
+        <div className="font-serif text-base font-bold text-ink">March 2026</div>
+        <div className="text-[11px] text-primary font-medium mt-px">Confidential · Not For Distribution</div>
+      </div>
     </div>
   </div>
 );
