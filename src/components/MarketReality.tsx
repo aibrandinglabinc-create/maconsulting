@@ -52,10 +52,10 @@ const MarketReality = () => (
       ))}
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 mb-12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-12">
       {credentials.map((cred, i) => (
-        <div key={i} className="group bg-dark border border-white/[0.08] py-3 px-[14px] flex items-start gap-3 text-base font-medium text-white/50 leading-[1.45] shadow-sm transition-all duration-400 hover:bg-card hover:border-primary/30 hover:text-ink hover:shadow-[0_4px_20px_hsla(173,85%,33%,0.1)]">
-          <cred.icon className="w-5 h-5 flex-shrink-0 mt-px text-primary/50 group-hover:text-primary transition-colors duration-400" strokeWidth={1.5} />
+        <div key={i} className="group bg-dark border border-white/[0.08] py-5 px-4 flex flex-col items-center text-center text-sm font-medium text-white leading-[1.5] shadow-sm transition-all duration-500 hover:bg-card hover:border-primary/30 hover:text-ink hover:shadow-[0_4px_20px_hsla(173,85%,33%,0.1)]">
+          <cred.icon className="w-6 h-6 mb-3 text-primary/60 group-hover:text-primary transition-colors duration-500" strokeWidth={1.5} />
           {cred.text}
         </div>
       ))}
