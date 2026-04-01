@@ -148,8 +148,8 @@ const IdealClientAvatars = () => {
                 className="p-5 md:px-7 grid grid-cols-[56px_1fr_auto] items-center gap-[18px] cursor-pointer select-none"
                 onClick={() => setOpenIndex(isOpen ? null : i)}
               >
-                <div className="w-11 h-11 bg-primary/[0.12] border border-primary/20 flex items-center justify-center text-xl flex-shrink-0">
-                  {ica.icon}
+                <div className="w-11 h-11 border border-primary/30 flex items-center justify-center flex-shrink-0">
+                  <ica.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="font-serif text-[22px] font-bold text-ink">{ica.title}</div>
