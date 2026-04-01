@@ -152,7 +152,7 @@ const IdealClientAvatars = () => {
                   <ica.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <div className="font-serif text-[22px] font-bold text-ink">{ica.title}</div>
+                  <div className="font-serif text-[22px] font-bold text-ink uppercase">{ica.title}</div>
                   <div className="text-sm text-ash mt-[2px] italic">{ica.subtitle}</div>
                 </div>
                 <span className={`text-lg text-primary transition-transform duration-300 font-light ${isOpen ? 'rotate-45' : ''}`}>+</span>
