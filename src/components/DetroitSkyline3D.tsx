@@ -49,6 +49,9 @@ const DetroitSkyline3D = () => {
   const init = useCallback(() => {
     const container = containerRef.current;
     if (!container) return;
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    if (w === 0 || h === 0) return;
 
     // Scene
     const scene = new THREE.Scene();
@@ -56,12 +59,7 @@ const DetroitSkyline3D = () => {
     scene.fog = new THREE.FogExp2(DARK.getHex(), 0.04);
 
     // Camera
-    const camera = new THREE.PerspectiveCamera(
-      35,
-      container.clientWidth / container.clientHeight,
-      0.1,
-      100
-    );
+    const camera = new THREE.PerspectiveCamera(35, w / h, 0.1, 100);
     camera.position.set(12, 8, 14);
     camera.lookAt(0, 2, 0);
 
@@ -70,10 +68,11 @@ const DetroitSkyline3D = () => {
       antialias: true,
       alpha: true,
     });
-    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setSize(w, h);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
+    renderer.domElement.style.display = "block";
     container.appendChild(renderer.domElement);
 
     // Ground grid
