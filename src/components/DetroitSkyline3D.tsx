@@ -325,7 +325,7 @@ const DetroitSkyline3D = () => {
       style={{ width: "52%" }}
     >
       {/* Canvas container */}
-      <div ref={containerRef} className="w-full h-full" />
+      <div ref={containerRef} className="absolute inset-0 w-full h-full" />
 
       {/* Left fade blend */}
       <div
