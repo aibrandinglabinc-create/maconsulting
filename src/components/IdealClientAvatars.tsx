@@ -86,10 +86,10 @@ const avatars = [
   },
   {
     icon: "💻",
-    title: "ICA 3 — Workforce Tech Founders",
-    subtitle: "Granted-type startups, GovTech, EdTech workforce",
+    title: "ICA 3 — Workforce Venture Partners",
+    subtitle: "Workforce startups, advisory engagements, equity plays",
     snap: [
-      "CEO/CTO at seed or Series A",
+      "CEO/Founder at seed or Series A",
       "Budget: $5K–$10K/mo + equity",
       "Pain: no practitioner on the team",
       "Trigger: investor pressure for domain expert",
@@ -109,7 +109,7 @@ const avatars = [
       },
       {
         title: "Why Only You",
-        items: ["You ARE the end user they're building for", "Your network IS their sales pipeline", "Granted founder already said you're 'core to the product'", "Your IP is literally their product foundation"],
+        items: ["You ARE the end user they're building for", "Your network IS their sales pipeline", "Founders already see you as 'core to the product'", "Your IP is literally their product foundation"],
       },
     ],
     conversion: [
@@ -152,7 +152,7 @@ const IdealClientAvatars = () => {
                 </div>
                 <div>
                   <div className="font-serif text-[22px] font-bold text-ink">{ica.title}</div>
-                  <div className="text-[11px] text-ash mt-[2px] italic">{ica.subtitle}</div>
+                  <div className="text-sm text-ash mt-[2px] italic">{ica.subtitle}</div>
                 </div>
                 <span className={`text-lg text-primary transition-transform duration-300 font-light ${isOpen ? 'rotate-45' : ''}`}>+</span>
               </div>
@@ -161,8 +161,8 @@ const IdealClientAvatars = () => {
                 <div className="px-5 md:px-7 pb-7">
                   <div className="bg-gradient-to-br from-primary-deep to-primary p-4 md:p-[16px_20px] grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
                     {ica.snap.map((s, j) => (
-                      <div key={j} className="flex items-start gap-[7px] text-white/80 text-xs leading-[1.5]">
-                        <span className="text-white/45 text-[10px] font-bold flex-shrink-0 mt-[2px]">→</span>{s}
+                      <div key={j} className="flex items-start gap-[7px] text-white/80 text-sm leading-[1.5]">
+                        <span className="text-white/45 text-[13px] font-bold flex-shrink-0 mt-[2px]">→</span>{s}
                       </div>
                     ))}
                   </div>
@@ -170,10 +170,10 @@ const IdealClientAvatars = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-[14px]">
                     {ica.cards.map((card, j) => (
                       <div key={j} className="bg-cream border border-border p-5 transition-all hover:border-primary/30 hover:shadow-md">
-                        <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary mb-3">{card.title}</div>
+                        <div className="text-xs font-bold tracking-[0.16em] uppercase text-primary mb-3">{card.title}</div>
                         <ul>
                           {card.items.map((item, k) => (
-                            <li key={k} className="text-xs text-charcoal py-[5px] border-b border-border last:border-b-0 flex gap-2 leading-[1.5]">
+                            <li key={k} className="text-sm text-charcoal py-[5px] border-b border-border last:border-b-0 flex gap-2 leading-[1.5]">
                               <span className="text-primary text-[13px] font-bold flex-shrink-0">·</span>{item}
                             </li>
                           ))}
@@ -183,10 +183,10 @@ const IdealClientAvatars = () => {
                   </div>
 
                   <div className="bg-dark p-5 md:p-[20px_22px] border-l-[3px] border-primary mb-[14px]">
-                    <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary mb-[10px]">Conversion Playbook</div>
+                    <div className="text-xs font-bold tracking-[0.16em] uppercase text-primary mb-[10px]">Conversion Playbook</div>
                     <ul>
                       {ica.conversion.map((step, j) => (
-                        <li key={j} className="text-xs text-white/60 py-[5px] border-b border-white/5 last:border-b-0 flex gap-2 leading-[1.5]">
+                        <li key={j} className="text-sm text-white/60 py-[5px] border-b border-white/5 last:border-b-0 flex gap-2 leading-[1.5]">
                           <span className="text-primary text-[13px] font-bold flex-shrink-0">·</span>{step}
                         </li>
                       ))}
@@ -197,7 +197,7 @@ const IdealClientAvatars = () => {
                     {ica.revenue.map((rev, j) => (
                       <div key={j} className="bg-primary/[0.06] border border-primary/15 p-4 text-center">
                         <div className="font-serif text-[26px] font-bold text-primary mb-1">{rev.num}</div>
-                        <div className="text-[9px] font-semibold tracking-[0.12em] uppercase text-ash">{rev.label}</div>
+                        <div className="text-xs font-semibold tracking-[0.12em] uppercase text-ash">{rev.label}</div>
                       </div>
                     ))}
                   </div>

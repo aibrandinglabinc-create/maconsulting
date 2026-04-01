@@ -5,9 +5,9 @@ const channels = [
     icon: "✉️",
     name: "Warm Email First",
     rate: "25% to 40% response rate",
-    body: "Use Apollo.io or Cognism to extract direct emails for all 50 leads. Highly personalized emails referencing a shared connection or a specific public activity. Warm outreach yields 25% to 40% response rates versus 1% to 3% for cold emails.",
+    body: "Highly personalized emails referencing a shared connection or a specific public activity. Warm outreach yields 25% to 40% response rates versus 1% to 3% for cold emails.",
     steps: [
-      "Export direct emails and phones for all 50 leads via Apollo.io",
+      "Build a curated lead list with direct emails for your top 50 prospects",
       "Write four email templates tailored to each ICA heat level",
       "Reference shared connections or specific events in every email",
       "One personalized paragraph before the ask. Never template energy.",
@@ -29,9 +29,9 @@ const channels = [
     icon: "📞",
     name: "Commission-Only SDR",
     rate: "Zero upfront cost. Pay per meeting booked.",
-    body: "Hire a revenue-share appointment setter via Upwork for cold leads only. $75 to $150 per qualified meeting booked. No meeting, no pay. This outsources the one part of business development you said makes your stomach turn.",
+    body: "Hire a revenue-share appointment setter for cold leads only. $75 to $150 per qualified meeting booked. No meeting, no pay. This outsources the one part of business development you said makes your stomach turn.",
     steps: [
-      "Post on Upwork for a commission-only SDR in nonprofit or healthcare outreach",
+      "Find a commission-only appointment setter experienced in nonprofit or healthcare outreach",
       "Provide ICA 3 lead list with talking points and qualification criteria",
       "Set up a shared calendar with 30-minute discovery call slots",
       "Pay $75 to $150 per qualified meeting. No meeting, no pay.",
@@ -52,12 +52,12 @@ const OutreachStrategy = () => (
         <div key={i} className="bg-card border border-border p-7 shadow-sm card-lift hover:border-primary/25">
           <span className="text-[28px] mb-[14px] block">{ch.icon}</span>
           <div className="font-serif text-xl font-bold text-ink mb-[6px]">{ch.name}</div>
-          <span className="inline-block text-[10px] font-bold py-[3px] px-[10px] bg-primary/[0.08] text-primary mb-[14px] tracking-[0.06em]">{ch.rate}</span>
-          <p className="text-xs text-ash leading-[1.75] mb-[14px]">{ch.body}</p>
+          <span className="inline-block text-[13px] font-bold py-[3px] px-[10px] bg-primary/[0.08] text-primary mb-[14px] tracking-[0.06em]">{ch.rate}</span>
+          <p className="text-sm text-ash leading-[1.75] mb-[14px]">{ch.body}</p>
           <ul>
             {ch.steps.map((step, j) => (
-              <li key={j} className="text-xs text-charcoal py-[5px] border-b border-border last:border-b-0 flex gap-[7px]">
-                <span className="text-primary text-[10px] font-bold flex-shrink-0 mt-[2px]">→</span>{step}
+              <li key={j} className="text-sm text-charcoal py-[5px] border-b border-border last:border-b-0 flex gap-[7px]">
+                <span className="text-primary text-[13px] font-bold flex-shrink-0 mt-[2px]">→</span>{step}
               </li>
             ))}
           </ul>
