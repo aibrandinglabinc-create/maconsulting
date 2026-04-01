@@ -63,9 +63,12 @@ const MarketReality = () => (
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-12">
       {credentials.map((cred, i) => (
-        <div key={i} className="group bg-dark border border-white/[0.08] py-5 px-4 flex flex-col items-center text-center text-sm font-medium text-white leading-[1.5] shadow-sm transition-all duration-500 hover:bg-card hover:border-primary/30 hover:text-ink hover:shadow-[0_4px_20px_hsla(173,85%,33%,0.1)]">
-          <cred.icon className="w-6 h-6 mb-3 text-primary/60 group-hover:text-primary transition-colors duration-500" strokeWidth={1.5} />
-          {cred.text}
+        <div key={i} className="group relative bg-dark border border-white/[0.06] py-6 px-5 flex flex-col items-center text-center text-sm font-medium text-white leading-[1.5] overflow-hidden cursor-pointer transition-all duration-700 hover:shadow-[0_12px_40px_-10px_hsla(173,85%,33%,0.15)] hover:scale-[1.02]">
+          {/* Teal frame reveal on hover */}
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+          <div className="absolute bottom-0 right-0 w-full h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right" />
+          <cred.icon className="w-6 h-6 mb-3 text-primary/30 group-hover:text-primary transition-colors duration-700" strokeWidth={1.5} />
+          <span className="group-hover:text-primary/90 transition-colors duration-700">{cred.text}</span>
         </div>
       ))}
     </div>
