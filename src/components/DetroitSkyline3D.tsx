@@ -308,8 +308,15 @@ const DetroitSkyline3D = () => {
   }, []);
 
   useEffect(() => {
-    const cleanup = init();
-    return () => cleanup?.();
+    // Delay init to ensure container has dimensions after layout
+    let cleanup: (() => void) | undefined;
+    const timer = requestAnimationFrame(() => {
+      cleanup = init() ?? undefined;
+    });
+    return () => {
+      cancelAnimationFrame(timer);
+      cleanup?.();
+    };
   }, [init]);
 
   return (
