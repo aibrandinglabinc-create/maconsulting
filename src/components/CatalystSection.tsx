@@ -72,6 +72,9 @@ const CatalystSection = () => (
     {/* Center glow */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse,_hsla(173,85%,33%,0.07)_0%,_transparent_65%)] pointer-events-none" />
 
+    {/* 3D Detroit Skyline */}
+    <DetroitSkyline3D />
+
     <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] relative z-[2]">
       {/* Header */}
       <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-4 flex items-center gap-[14px]">
