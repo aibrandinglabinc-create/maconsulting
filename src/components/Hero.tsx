@@ -1,3 +1,5 @@
+import DetroitSkyline from "./DetroitSkyline";
+
 const stats = [
   { num: "$276K", label: "Conservative Annual Floor" },
   { num: "26", label: "States of Policy Depth" },
@@ -8,8 +10,27 @@ const stats = [
 
 const Hero = () => (
   <section className="bg-dark px-6 md:px-[60px] pt-[72px] pb-[60px] border-b-[3px] border-primary relative overflow-hidden">
-    <div className="absolute inset-0 hero-grid-pattern" />
-    <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse,_hsla(173,85%,33%,0.1)_0%,_transparent_65%)] pointer-events-none" />
+    {/* Animated grid */}
+    <div className="hero-grid" />
+    {/* Top fade */}
+    <div className="hero-top-fade" />
+
+    {/* Detroit skyline */}
+    <div className="detroit-wrap">
+      <div className="detroit-glow" />
+      <DetroitSkyline />
+      <div className="detroit-reflection" />
+      <div className="water-line" />
+    </div>
+
+    {/* Left sweep to keep text readable */}
+    <div className="sweep-l" />
+
+    {/* City label */}
+    <div className="city-label">
+      <span className="city-label-text">Detroit, Michigan</span>
+    </div>
+
     <div className="max-w-[1100px] mx-auto relative z-10">
       <p className="text-xs font-bold tracking-[0.22em] uppercase text-primary mb-[18px] flex items-center gap-3">
         <span className="w-7 h-px bg-primary inline-block" />
