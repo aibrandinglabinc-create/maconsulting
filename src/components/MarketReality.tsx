@@ -43,11 +43,11 @@ const MarketReality = () => (
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-9">
       {opportunities.map((opp, i) => (
-        <div key={i} className="group bg-dark border border-white/[0.08] p-[30px_26px] relative overflow-hidden card-lift card-bar-reveal shadow-sm hover:bg-card hover:border-primary/30 transition-all duration-500">
-          <opp.icon className="w-7 h-7 mb-4 text-primary/60 group-hover:text-primary transition-colors duration-500" strokeWidth={1.5} />
+        <div key={i} className="group bg-dark border border-white/[0.08] p-[30px_26px] relative overflow-hidden card-bar-reveal shadow-sm hover:bg-card hover:border-primary/30 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_hsla(173,85%,33%,0.25)] transition-all duration-700 ease-out cursor-pointer">
+          <opp.icon className="w-7 h-7 mb-4 text-primary/60 group-hover:text-primary transition-colors duration-700" strokeWidth={1.5} />
           <div className="font-serif text-[58px] font-bold text-primary leading-none mb-[6px] tracking-tight">{opp.num}</div>
-          <div className="text-sm font-bold tracking-[0.16em] uppercase text-white/50 group-hover:text-ink mb-[10px] transition-colors duration-500">{opp.label}</div>
-          <p className="text-base text-white/40 group-hover:text-foreground leading-[1.75] transition-colors duration-500">{opp.body}</p>
+          <div className="text-sm font-bold tracking-[0.16em] uppercase text-white/50 group-hover:text-ink mb-[10px] transition-colors duration-700">{opp.label}</div>
+          <p className="text-base text-white/40 group-hover:text-foreground leading-[1.75] transition-colors duration-700">{opp.body}</p>
         </div>
       ))}
     </div>
