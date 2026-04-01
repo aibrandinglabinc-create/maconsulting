@@ -1,5 +1,4 @@
 import { Globe, GitBranch, Gem, Settings, Users } from "lucide-react";
-import DetroitSkyline3D from "./DetroitSkyline3D";
 
 const pillars = [
   {
