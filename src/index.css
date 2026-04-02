@@ -217,3 +217,8 @@
   0%, 100% { filter: drop-shadow(0 0 3px #12C4B0); opacity: 0.75; }
   50% { filter: drop-shadow(0 0 14px #12C4B0) drop-shadow(0 0 28px #0D9B8B); opacity: 1; }
 }
+
+@keyframes sweep {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
