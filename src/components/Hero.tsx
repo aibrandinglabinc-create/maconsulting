@@ -1,6 +1,7 @@
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import Ticker from "@/components/Ticker";
 
 const Particles = () => {
   const ref = useRef<THREE.Points>(null);
@@ -102,7 +103,7 @@ const stats = [
 ];
 
 const Hero = () => (
-  <section className="hero-section min-h-screen relative overflow-hidden flex items-center bg-ink">
+  <section className="hero-section min-h-screen relative overflow-hidden bg-ink">
     <HeroScene />
 
     {/* Sweep overlays */}
@@ -116,38 +117,44 @@ const Hero = () => (
     <div className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[520px] h-[520px] bg-[radial-gradient(circle,_hsla(173,85%,33%,0.14)_0%,_hsla(173,85%,33%,0.04)_40%,_transparent_70%)] animate-[orbpulse_7s_ease-in-out_infinite] pointer-events-none z-[1]" />
 
     {/* Content */}
-    <div className="relative z-[3] max-w-[1160px] mx-auto px-6 md:px-[60px] w-full">
-      <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-[22px] flex items-center gap-[14px] opacity-0 animate-[fadeup_0.8s_0.3s_ease_forwards]">
-        <span className="w-9 h-px bg-primary inline-block" />
-        Strategic Growth Blueprint · March 2026
-      </p>
+    <div className="relative z-[3] min-h-screen flex flex-col justify-center py-24 md:py-28">
+      <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] w-full">
+        <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-[22px] flex items-center gap-[14px] opacity-0 animate-[fadeup_0.8s_0.3s_ease_forwards]">
+          <span className="w-9 h-px bg-primary inline-block" />
+          Strategic Growth Blueprint · March 2026
+        </p>
 
-      <div className="overflow-hidden mb-7">
-        <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-light text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-          Everything you need
-        </span>
-        <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-light text-white leading-[0.96] tracking-[-0.02em] block opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.65s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-          is already <em className="italic text-primary not-italic-reset">inside you.</em>
-        </span>
-        <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-bold text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-          Now let's build it.
-        </span>
+        <div className="overflow-hidden mb-7">
+          <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-light text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+            Everything you need
+          </span>
+          <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-light text-white leading-[0.96] tracking-[-0.02em] block opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.65s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+            is already <em className="italic text-primary not-italic-reset">inside you.</em>
+          </span>
+          <span className="font-serif text-[clamp(43px,6.4vw,86px)] font-bold text-white leading-[0.96] tracking-[-0.02em] block uppercase opacity-0 translate-y-[60px] animate-[slideup_0.9s_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+            Now let's build it.
+          </span>
+        </div>
+
+        <p className="text-[15px] text-white/[0.75] max-w-[520px] leading-[1.95] mb-[72px] opacity-0 animate-[fadeup_0.8s_1s_ease_forwards]">
+          You hold more intellectual capital than most consulting firms carry in their entire practice. This blueprint maps{" "}
+          <strong className="text-white font-medium">$30,000 in month one</strong>, $276,000 by year end, and a seven-figure portfolio by year two. No cold outreach. No chasing. No corporate systems to answer to.
+        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 border border-white/[0.07] opacity-0 animate-[fadeup_0.8s_1.2s_ease_forwards]">
+          {stats.map((s, i) => (
+            <div key={i} className="py-6 px-[18px] text-center bg-white/[0.018] backdrop-blur-[10px] border-r border-white/[0.07] last:border-r-0 transition-colors hover:bg-primary/[0.07]">
+              <div className={`font-serif font-bold leading-none mb-[7px] ${s.accent ? "text-primary text-[46px]" : "text-white text-[40px]"}`}>
+                {s.num}
+              </div>
+              <div className="text-[9px] font-semibold tracking-[0.15em] uppercase text-white/[0.26]">{s.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <p className="text-[15px] text-white/[0.75] max-w-[520px] leading-[1.95] mb-[72px] opacity-0 animate-[fadeup_0.8s_1s_ease_forwards]">
-        You hold more intellectual capital than most consulting firms carry in their entire practice. This blueprint maps{" "}
-        <strong className="text-white font-medium">$30,000 in month one</strong>, $276,000 by year end, and a seven-figure portfolio by year two. No cold outreach. No chasing. No corporate systems to answer to.
-      </p>
-
-      <div className="grid grid-cols-2 md:grid-cols-5 border border-white/[0.07] opacity-0 animate-[fadeup_0.8s_1.2s_ease_forwards]">
-        {stats.map((s, i) => (
-          <div key={i} className="py-6 px-[18px] text-center bg-white/[0.018] backdrop-blur-[10px] border-r border-white/[0.07] last:border-r-0 transition-colors hover:bg-primary/[0.07]">
-            <div className={`font-serif font-bold leading-none mb-[7px] ${s.accent ? "text-primary text-[46px]" : "text-white text-[40px]"}`}>
-              {s.num}
-            </div>
-            <div className="text-[9px] font-semibold tracking-[0.15em] uppercase text-white/[0.26]">{s.label}</div>
-          </div>
-        ))}
+      <div className="w-full mt-6 md:mt-8 opacity-0 animate-[fadeup_0.8s_1.35s_ease_forwards]">
+        <Ticker />
       </div>
     </div>
 
