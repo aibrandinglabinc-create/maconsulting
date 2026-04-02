@@ -37,6 +37,7 @@ const Index = () => (
       <MarketValidation />
       <OfferArchitecture />
       <OutreachStrategy />
+      <LockedLeadsSection />
     </div>
     <TotalBand />
     <Footer />
