@@ -134,16 +134,6 @@ const CatalystSection = () => (
         </div>
       </div>
 
-      {/* CTA Row */}
-      <div className="pt-12 border-t border-primary/[0.12]">
-        <h3 className="font-serif text-4xl font-light text-ink leading-[1.15] uppercase tracking-[0.02em] mb-[10px]">
-          Ready to <strong className="font-bold">Activate</strong><br />
-          the Ecosystem?
-        </h3>
-        <p className="text-[13px] text-ash leading-[1.8] max-w-[500px]">
-          The C.A.T.A.L.Y.S.T.™ infrastructure is built. The 50 leads are mapped. The sequences are ready to run. What is missing is the conversation that starts all of it.
-        </p>
-      </div>
     </div>
   </section>
 );
