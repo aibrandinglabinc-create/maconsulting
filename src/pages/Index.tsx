@@ -24,10 +24,10 @@ const Index = () => (
     
     <EcosystemNetworkSection />
     <CatalystSection />
+    <DetroitDivider />
     <div className="w-full h-[40px] overflow-hidden flex items-center" style={{ background: '#0A0A0C', borderTop: '1px solid rgba(18,196,176,0.2)', borderBottom: '1px solid rgba(18,196,176,0.2)' }}>
       <Ticker />
     </div>
-    <DetroitDivider />
     <div className="max-w-[1160px] mx-auto px-6 py-10 space-y-16">
       <MarketReality />
       <RevenueProjection />

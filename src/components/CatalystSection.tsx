@@ -88,9 +88,9 @@ const CatalystSection = () => (
         {/* Five Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px">
           {pillars.map((p) => (
-            <div key={p.num} className="pillar group relative overflow-hidden p-9" style={{ background: 'rgba(255,255,255,0.02)', backdropFilter: 'blur(12px)', border: '1px solid rgba(18,196,176,0.12)', transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)' }}
+            <div key={p.num} className="pillar group relative overflow-hidden p-9 bg-ink" style={{ background: 'rgba(10,10,12,0.94)', backdropFilter: 'blur(12px)', border: '1px solid rgba(18,196,176,0.12)', transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)' }}
               onMouseEnter={(e) => { const el = e.currentTarget; el.style.background = 'rgba(18,196,176,0.07)'; el.style.border = '1px solid rgba(18,196,176,0.4)'; el.style.transform = 'translateY(-8px)'; el.style.boxShadow = '0 20px 60px rgba(18,196,176,0.15)'; }}
-              onMouseLeave={(e) => { const el = e.currentTarget; el.style.background = 'rgba(255,255,255,0.02)'; el.style.border = '1px solid rgba(18,196,176,0.12)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; }}
+              onMouseLeave={(e) => { const el = e.currentTarget; el.style.background = 'rgba(10,10,12,0.94)'; el.style.border = '1px solid rgba(18,196,176,0.12)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; }}
             >
               <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
               <div className="pillar-icon"><p.Icon className="w-9 h-9 mb-[18px] text-primary" strokeWidth={1.2} /></div>
