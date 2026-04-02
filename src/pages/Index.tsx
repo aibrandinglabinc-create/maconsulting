@@ -41,6 +41,7 @@ const Index = () => (
       <LockedLeadsSection />
     </div>
     <TotalBand />
+    <ClosingCTASection />
     <Footer />
   </div>
 );
