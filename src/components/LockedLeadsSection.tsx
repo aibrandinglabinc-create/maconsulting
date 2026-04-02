@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Lock, Sparkles, ChevronRight, ShieldCheck, Database, Target } from 'lucide-react';
+import { Lock, Sparkles, ChevronRight } from 'lucide-react';
 
 export default function LockedLeadsSection() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -45,9 +46,15 @@ export default function LockedLeadsSection() {
     { id: 8, org: "DTE Energy", locked: true },
   ];
 
+  const filters = [
+    { key: "ica1", label: "ICA 1 · Workforce Tech" },
+    { key: "ica2", label: "ICA 2 · National Nonprofit" },
+    { key: "ica3", label: "ICA 3 · Healthcare & Corporate" },
+  ];
+
   return (
-    <section className="relative bg-[#FAFAF8] py-24 overflow-hidden">
-      {/* Ambient glow that follows mouse */}
+    <section className="relative py-24 overflow-hidden" style={{ background: '#0A0A0C' }}>
+      {/* Ambient glow */}
       <div
         className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-700"
         style={{
@@ -59,35 +66,43 @@ export default function LockedLeadsSection() {
       <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] relative z-10">
         {/* Section Header */}
         <div className="mb-12">
-          <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-[#12C4B0] mb-4 flex items-center gap-[14px]">
-            <Sparkles className="w-4 h-4" />
+          <div className="w-8 h-px bg-primary mb-6" />
+          <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-4">
             Priority Lead Intelligence
-            <span className="w-7 h-px bg-[#12C4B0] inline-block" />
           </p>
 
-          <h2 className="font-serif text-[clamp(32px,4vw,56px)] font-light text-[#070709] leading-[1.1] tracking-[-0.01em] uppercase mb-4">
+          <h2
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 72, fontWeight: 300, lineHeight: 1.05, letterSpacing: '-0.01em' }}
+            className="text-white uppercase mb-4"
+          >
             50 high-value targets.{' '}
             <strong className="font-bold">
               Start with every Hot lead first.
             </strong>
           </h2>
 
-          <p className="text-[15px] text-[#6B6B6B] max-w-[680px] leading-[1.9]">
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: '#888', lineHeight: 1.9, maxWidth: 680 }}>
             Your Hot list alone closes $30,000 in 30 days. Warm leads need one introduction. Cold leads need LinkedIn content to warm them before direct contact.
           </p>
         </div>
 
-        {/* ICA Filter Tags */}
-        <div className="flex flex-wrap gap-3 mb-8">
-          {[
-            { icon: Target, label: "ICA 1 · Workforce Tech", color: "text-[#0A9B8B]", bg: "bg-[#12C4B0]/5", border: "border-[#12C4B0]/20" },
-            { icon: ShieldCheck, label: "ICA 2 · National Nonprofit", color: "text-blue-700", bg: "bg-blue-600/5", border: "border-blue-600/20" },
-            { icon: Database, label: "ICA 3 · Healthcare & Corporate", color: "text-purple-700", bg: "bg-purple-600/5", border: "border-purple-600/20" }
-          ].map((tag, i) => (
-            <div key={i} className={`flex items-center gap-2 px-4 py-2 rounded-full border ${tag.border} ${tag.bg} ${tag.color} text-[11px] font-semibold tracking-[0.08em] uppercase`}>
-              <tag.icon className="w-3.5 h-3.5" />
-              {tag.label}
-            </div>
+        {/* ICA Filter Toggles */}
+        <div className="flex flex-wrap gap-0 mb-8">
+          {filters.map((f) => (
+            <button
+              key={f.key}
+              onClick={() => setActiveFilter(activeFilter === f.key ? null : f.key)}
+              className="px-5 py-3 text-[11px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200"
+              style={{
+                border: '1px solid #1a1a1a',
+                borderRadius: 0,
+                background: 'transparent',
+                color: activeFilter === f.key ? '#fff' : '#555',
+                borderBottom: activeFilter === f.key ? '2px solid #12C4B0' : '1px solid #1a1a1a',
+              }}
+            >
+              {f.label}
+            </button>
           ))}
         </div>
 
@@ -98,34 +113,35 @@ export default function LockedLeadsSection() {
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Table Header */}
-          <div className="grid grid-cols-[50px_1fr_140px_120px_80px_80px_1fr] gap-4 px-6 py-3 border-b border-[#E5E5E0]">
+          <div className="grid grid-cols-[50px_1fr_140px_120px_80px_80px_1fr] gap-4 px-6 py-3" style={{ borderBottom: '1px solid #1a1a1a' }}>
             {['#', 'Organization', 'Contact', 'Location', 'Type', 'Heat', 'Outreach Angle'].map((h, i) => (
-              <div key={i} className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#999]">
+              <div key={i} className="text-[9px] font-bold tracking-[0.2em] uppercase" style={{ color: '#555' }}>
                 {h}
               </div>
             ))}
           </div>
 
           {/* Table Body */}
-          <div className="divide-y divide-[#F0F0EC]">
+          <div>
             {leads.map((lead, i) => (
               <motion.div
                 key={lead.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.06, duration: 0.4 }}
-                className={`grid grid-cols-[50px_1fr_140px_120px_80px_80px_1fr] gap-4 px-6 py-5 items-center transition-all duration-300 ${
+                className={`grid grid-cols-[50px_1fr_140px_120px_80px_80px_1fr] gap-4 px-6 items-center transition-all duration-300 ${
                   lead.locked
                     ? 'opacity-40 blur-[2px] select-none'
-                    : 'hover:bg-[#12C4B0]/[0.03]'
+                    : 'hover:bg-white/[0.02]'
                 }`}
+                style={{ paddingTop: 24, paddingBottom: 24, borderBottom: '1px solid #1a1a1a' }}
               >
-                <div className="text-[11px] font-mono text-[#BBB]">0{lead.id}</div>
+                <div className="text-[11px] font-mono" style={{ color: '#555' }}>0{lead.id}</div>
 
                 {lead.locked ? (
                   <>
-                    <div className="text-[14px] font-serif font-semibold text-[#070709]">{lead.org}</div>
-                    <div className="col-span-5 flex items-center gap-2 text-[11px] text-[#AAA]">
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 18 }} className="font-semibold text-white">{lead.org}</div>
+                    <div className="col-span-5 flex items-center gap-2 text-[11px]" style={{ color: '#555' }}>
                       <Lock className="w-3 h-3" />
                       Locked
                     </div>
@@ -133,22 +149,24 @@ export default function LockedLeadsSection() {
                 ) : (
                   <>
                     <div>
-                      <div className="text-[14px] font-serif font-semibold text-[#070709]">{lead.org}</div>
-                      <div className="text-[11px] text-[#999] mt-0.5">{lead.sub}</div>
+                      <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 18 }} className="font-semibold text-white">{lead.org}</div>
+                      <div className="text-[11px] mt-0.5" style={{ color: '#666' }}>{lead.sub}</div>
                     </div>
-                    <div className="text-[12px] text-[#555]">{lead.contact}</div>
-                    <div className="text-[12px] text-[#555]">{lead.location}</div>
-                    <div className="text-[10px] font-bold tracking-[0.1em] uppercase text-purple-700 bg-purple-50 px-2 py-1 rounded text-center">
+                    <div className="text-[12px]" style={{ color: '#888' }}>{lead.contact}</div>
+                    <div className="text-[12px]" style={{ color: '#888' }}>{lead.location}</div>
+                    <div
+                      className="text-[10px] font-bold tracking-[0.1em] uppercase px-2 py-1 text-center"
+                      style={{ background: '#001a16', color: '#12C4B0', border: '1px solid #12C4B0', borderRadius: 0 }}
+                    >
                       ICA 3
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="relative flex h-2.5 w-2.5">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C05A15] opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#C05A15] shadow-[0_0_10px_rgba(192,90,21,0.5)]" />
-                      </span>
-                      <span className="text-[11px] font-bold text-[#C05A15] uppercase tracking-[0.06em]">Hot</span>
+                    <div
+                      className="text-[10px] font-bold tracking-[0.1em] uppercase px-2 py-1 text-center"
+                      style={{ background: '#1a0000', color: '#E04040', border: '1px solid #E04040', borderRadius: 0 }}
+                    >
+                      Hot
                     </div>
-                    <div className="text-[11px] text-[#777] leading-[1.6]">{lead.angle}</div>
+                    <div className="text-[11px] leading-[1.6]" style={{ color: '#888' }}>{lead.angle}</div>
                   </>
                 )}
               </motion.div>
@@ -159,21 +177,22 @@ export default function LockedLeadsSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="relative py-16 flex flex-col items-center justify-center text-center bg-gradient-to-b from-transparent via-[#FAFAF8] to-[#F5F5F0]"
+              className="relative py-16 flex flex-col items-center justify-center text-center"
+              style={{ background: 'linear-gradient(to bottom, transparent, rgba(10,10,12,1))' }}
             >
               <div className="absolute inset-0 bg-[linear-gradient(rgba(18,196,176,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(18,196,176,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
               <div className="relative z-10 flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-[#070709] flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(18,196,176,0.15)]">
-                  <Lock className="w-7 h-7 text-[#12C4B0]" />
+                <div className="w-16 h-16 flex items-center justify-center mb-6" style={{ background: '#12C4B0', border: 'none' }}>
+                  <Lock className="w-7 h-7 text-[#0A0A0C]" />
                 </div>
-                <div className="font-serif text-[28px] font-bold text-[#070709] mb-1">
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 300 }} className="text-white mb-1">
                   48 more leads
                 </div>
-                <p className="text-[13px] text-[#999] tracking-[0.06em] uppercase font-medium mb-4">
+                <p className="text-[13px] tracking-[0.06em] uppercase font-medium mb-4" style={{ color: '#555' }}>
                   Mapped and ready to activate
                 </p>
-                <p className="text-[14px] text-[#777] max-w-[520px] leading-[1.8] mb-8">
+                <p className="text-[14px] max-w-[520px] leading-[1.8] mb-8" style={{ color: '#888' }}>
                   The complete intelligence report includes contact emails, heat scores, outreach angles, and ICA classifications for all 50 leads. This activates inside C.A.T.A.L.Y.S.T.™ the moment we begin.
                 </p>
                 <a
@@ -192,16 +211,16 @@ export default function LockedLeadsSection() {
           </div>
 
           {/* Summary Footer Bar */}
-          <div className="flex items-center justify-between px-6 py-4 bg-[#070709] mt-0">
+          <div className="flex items-center justify-between px-6 py-4" style={{ background: '#0D0D0D', borderTop: '1px solid #1a1a1a' }}>
             <div className="flex items-center gap-6">
               {[
-                { color: 'bg-[#C05A15]', shadow: 'shadow-[0_0_10px_rgba(192,90,21,0.5)]', label: 'Hot', num: '16' },
-                { color: 'bg-[#B45309]', shadow: '', label: 'Warm', num: '20' },
-                { color: 'bg-[#8C8882]', shadow: '', label: 'Cold', num: '14' },
+                { color: '#E04040', label: 'Hot', num: '16' },
+                { color: '#12C4B0', label: 'Warm', num: '20' },
+                { color: '#555', label: 'Cold', num: '14' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   {i > 0 && <span className="w-px h-4 bg-white/10 mr-2" />}
-                  <span className={`w-2 h-2 rounded-full ${item.color} ${item.shadow}`} />
+                  <span className="w-2 h-2" style={{ background: item.color }} />
                   <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-white/50">{item.label}</span>
                   <span className="text-[13px] font-bold text-white/90 font-mono">{item.num}</span>
                 </div>
@@ -210,7 +229,7 @@ export default function LockedLeadsSection() {
 
             <div className="flex items-center gap-3">
               <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-white/50">Total Mapped</span>
-              <span className="text-[18px] font-bold text-[#12C4B0] font-mono">50</span>
+              <span className="text-[18px] font-bold text-primary font-mono">50</span>
             </div>
           </div>
         </div>

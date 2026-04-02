@@ -37,9 +37,9 @@ const Index = () => (
       <IdealClientAvatars />
       <MarketValidation />
       <OfferArchitecture />
-      <OutreachStrategy />
-      <LockedLeadsSection />
     </div>
+    <OutreachStrategy />
+    <LockedLeadsSection />
     <TotalBand />
     <ClosingCTASection />
     <Footer />
