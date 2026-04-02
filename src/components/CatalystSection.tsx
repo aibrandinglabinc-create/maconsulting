@@ -66,22 +66,28 @@ const tiers = [
 
 const CatalystSection = () => (
   <>
-    <section className="bg-ink py-[120px] relative overflow-hidden">
+    <section className="relative overflow-hidden py-[120px]" style={{ background: '#1A1A1A' }}>
+      {/* Radial gradient overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.05),_transparent_70%)] pointer-events-none" />
       {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(hsla(173,85%,33%,0.06)_1px,transparent_1px),linear-gradient(90deg,hsla(173,85%,33%,0.06)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
       <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] relative z-[2]">
+        {/* Detroit & Beyond tag */}
+        <p className="text-[12px] font-bold tracking-[0.5em] uppercase text-white/50 mb-8 border-b border-white/10 pb-4 inline-block">
+          Detroit &amp; Beyond
+        </p>
         {/* Header */}
         <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-4 flex items-center gap-[14px]">
           <span className="w-7 h-px bg-primary inline-block" />
           The C.A.T.A.L.Y.S.T.™ Ecosystem
         </p>
-        <h2 className="font-serif text-[clamp(36px,5vw,68px)] font-light text-background leading-[1.05] tracking-[-0.01em] uppercase mb-4">
+        <h2 className="font-serif text-[clamp(36px,5vw,68px)] font-light text-white leading-[1.05] tracking-[-0.01em] uppercase mb-4">
           The Digital<br />
           <strong className="font-bold">Architecture</strong><br />
           <em className="italic text-primary normal-case">behind your business.</em>
         </h2>
-        <p className="text-[17px] text-ash max-w-[580px] leading-[1.9] mb-[72px]">
+        <p className="text-[17px] text-white/70 max-w-[580px] leading-[1.9] mb-[72px]">
           We have built a fully operational high-conversion ecosystem. Every layer of your digital presence is engineered to attract, qualify, and convert the right clients without you touching a single cold lead.
         </p>
 
