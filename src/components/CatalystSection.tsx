@@ -22,7 +22,7 @@ const pillars = [
   {
     num: "04",
     Icon: Settings,
-    title: "Catalyst CRM & Outreach",
+    title: "Catalyst™ CRM\n& Outreach",
     body: "Data powering all 50 high-value leads loaded into the C.A.T.A.L.Y.S.T.™ system, tagged by heat level, and activated through automated warm email sequences. Zero cold outreach required.",
   },
   {
