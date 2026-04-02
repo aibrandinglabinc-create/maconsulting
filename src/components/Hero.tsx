@@ -119,7 +119,13 @@ const Hero = () => (
     <div className="relative z-[3] max-w-[1160px] mx-auto px-6 md:px-[60px] w-full">
       <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-[22px] flex items-center gap-[14px] opacity-0 animate-[fadeup_0.8s_0.3s_ease_forwards]">
         <span className="w-9 h-px bg-primary inline-block" />
-        Strategic Growth Blueprint · AI Branding Lab, Inc. · March 2026
+        Strategic Growth Blueprint · March 2026
+      </p>
+      <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary/60 mb-[22px] opacity-0 animate-[fadeup_0.8s_0.4s_ease_forwards] pl-[23px]">
+        AI Branding Lab, Inc. · Prepared for Margrit Allen, Chief Workforce Officer
+      </p>
+      <p className="text-[9px] font-bold tracking-[0.18em] uppercase text-white/20 mb-[22px] opacity-0 animate-[fadeup_0.8s_0.45s_ease_forwards] pl-[23px]">
+        Not for Distribution
       </p>
 
       <div className="overflow-hidden mb-7">
