@@ -108,11 +108,10 @@ const CatalystSection = () => (
         </p>
 
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse min-w-[700px]">
+          <table className="w-full border-collapse">
             <thead>
               <tr className="border-b border-primary/25">
-                <th className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/60 pb-4 text-left">Service Category</th>
-                <th className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/60 pb-4 text-left hidden md:table-cell">High-Level Activation</th>
+                <th className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/60 pb-4 text-left pl-6">Service Category</th>
                 <th className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/60 pb-4 text-right">Target Revenue</th>
               </tr>
             </thead>
@@ -125,7 +124,8 @@ const CatalystSection = () => (
                     className="group/row"
                     style={{
                       borderBottom: "1px solid rgba(255,255,255,0.05)",
-                      borderLeft: isFeatured ? "3px solid #12C4B0" : "3px solid rgba(18,196,176,0.25)",
+                      borderLeft: isFeatured ? "3px solid #12C4B0" : "3px solid rgba(18,196,176,0.2)",
+                      paddingLeft: 24,
                       background: isFeatured ? "rgba(18,196,176,0.06)" : "transparent",
                       transition: "all 0.3s ease",
                     }}
@@ -137,19 +137,16 @@ const CatalystSection = () => (
                     }}
                     onMouseLeave={(e) => {
                       if (!isFeatured) {
-                        e.currentTarget.style.borderLeft = "3px solid rgba(18,196,176,0.25)";
+                        e.currentTarget.style.borderLeft = "3px solid rgba(18,196,176,0.2)";
                         e.currentTarget.style.background = "transparent";
                       }
                     }}
                   >
-                    <td className="py-[22px] align-top pl-5">
+                    <td className="py-7 align-top pl-6">
                       <div className="font-serif text-[22px] font-bold text-white mb-[3px] tracking-[0.02em]">{tier.name}</div>
                       <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary/[0.55]">{tier.cat}</div>
                     </td>
-                    <td className="py-[22px] align-top pr-10 hidden md:table-cell">
-                      <p className="text-[13px] text-white/60">{tier.activation}</p>
-                    </td>
-                    <td className="py-[22px] align-top text-right">
+                    <td className="py-7 align-top text-right">
                       <div className="font-serif text-[44px] font-bold text-primary tracking-[-0.01em] whitespace-nowrap leading-none">{tier.revenue}</div>
                       <div className="text-[9px] font-semibold tracking-[0.12em] uppercase text-primary/40 mt-[3px]">{tier.revSub}</div>
                     </td>
