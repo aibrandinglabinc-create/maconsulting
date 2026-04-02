@@ -21,6 +21,7 @@ const Index = () => (
     <NavBar />
     <Hero />
     
+    <EcosystemNetworkSection />
     <CatalystSection />
     <DetroitDivider />
     <div className="max-w-[1160px] mx-auto px-6 py-10 space-y-16">
