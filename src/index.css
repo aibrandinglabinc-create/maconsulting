@@ -212,3 +212,8 @@
 .pillar:nth-child(3) .pillar-icon svg * { animation-delay: 0.5s; }
 .pillar:nth-child(4) .pillar-icon svg * { animation-delay: 0.7s; }
 .pillar:nth-child(5) .pillar-icon svg * { animation-delay: 0.9s; }
+
+@keyframes skyline-pulse {
+  0%, 100% { filter: drop-shadow(0 0 3px #12C4B0); opacity: 0.75; }
+  50% { filter: drop-shadow(0 0 14px #12C4B0) drop-shadow(0 0 28px #0D9B8B); opacity: 1; }
+}
