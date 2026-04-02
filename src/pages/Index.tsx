@@ -1,7 +1,7 @@
 import Ticker from "@/components/Ticker";
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
-import PrepBand from "@/components/PrepBand";
+
 import CatalystSection from "@/components/CatalystSection";
 import DetroitDivider from "@/components/DetroitDivider";
 import MarketReality from "@/components/MarketReality";
