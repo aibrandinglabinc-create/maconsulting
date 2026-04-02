@@ -21,7 +21,7 @@ const Index = () => (
     <Ticker />
     <NavBar />
     <Hero />
-    <PrepBand />
+    
     <CatalystSection />
     <DetroitDivider />
     <div className="max-w-[1160px] mx-auto px-6 py-10 space-y-16">
