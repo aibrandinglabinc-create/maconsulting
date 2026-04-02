@@ -117,7 +117,7 @@ const Hero = () => (
     <div className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[520px] h-[520px] bg-[radial-gradient(circle,_hsla(173,85%,33%,0.14)_0%,_hsla(173,85%,33%,0.04)_40%,_transparent_70%)] animate-[orbpulse_7s_ease-in-out_infinite] pointer-events-none z-[1]" />
 
     {/* Content */}
-    <div className="relative z-[3] min-h-screen flex flex-col justify-center py-24 md:py-28">
+    <div className="relative z-[2] min-h-screen flex flex-col justify-end pb-16 pt-24 md:pt-28">
       <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] w-full">
         <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-[22px] flex items-center gap-[14px] opacity-0 animate-[fadeup_0.8s_0.3s_ease_forwards]">
           <span className="w-9 h-px bg-primary inline-block" />
