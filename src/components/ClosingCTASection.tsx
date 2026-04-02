@@ -66,24 +66,6 @@ export default function ClosingCTASection() {
         {/* Divider */}
         <div className="w-16 h-px bg-[#12C4B0]/30 mx-auto my-10" />
 
-        {/* Quote */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="relative max-w-[700px] mx-auto mb-8"
-        >
-          <span className="absolute -top-6 -left-4 text-[60px] font-serif text-[#12C4B0]/20 leading-none">
-            &ldquo;
-          </span>
-          <p className="font-serif text-[clamp(20px,2.5vw,28px)] text-white/90 leading-[1.6] italic">
-            I don&apos;t want to go back and work for no white man when I got
-            all this money in my brain.
-          </p>
-          <span className="absolute -bottom-8 -right-4 text-[60px] font-serif text-[#12C4B0]/20 leading-none">
-            &rdquo;
-          </span>
-        </motion.div>
 
         {/* Sub copy */}
         <motion.p
