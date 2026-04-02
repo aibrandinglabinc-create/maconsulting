@@ -105,6 +105,13 @@ const DetroitDivider = () => (
         Detroit &amp; Beyond
       </p>
     </div>
+
+    <div className="absolute bottom-8 right-8 z-[25] text-right">
+      <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-primary/40">
+        Detroit &amp; Beyond
+      </p>
+      <div className="w-8 h-px bg-primary/20 mt-2 ml-auto"></div>
+    </div>
   </section>
 );
 
