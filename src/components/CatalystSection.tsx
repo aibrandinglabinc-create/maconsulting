@@ -65,40 +65,44 @@ const tiers = [
 ];
 
 const CatalystSection = () => (
-  <section className="bg-background py-[120px] relative overflow-hidden">
-    {/* Background grid */}
-    <div className="absolute inset-0 bg-[linear-gradient(hsla(173,85%,33%,0.06)_1px,transparent_1px),linear-gradient(90deg,hsla(173,85%,33%,0.06)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+  <>
+    <section className="bg-background py-[120px] relative overflow-hidden">
+      {/* Background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(hsla(173,85%,33%,0.06)_1px,transparent_1px),linear-gradient(90deg,hsla(173,85%,33%,0.06)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
-    <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] relative z-[2]">
-      {/* Header */}
-      <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-4 flex items-center gap-[14px]">
-        <span className="w-7 h-px bg-primary inline-block" />
-        The C.A.T.A.L.Y.S.T.™ Ecosystem
-      </p>
-      <h2 className="font-serif text-[clamp(36px,5vw,68px)] font-light text-ink leading-[1.05] tracking-[-0.01em] uppercase mb-4">
-        The Digital<br />
-        <strong className="font-bold">Architecture</strong><br />
-        <em className="italic text-primary normal-case">behind your business.</em>
-      </h2>
-      <p className="text-[15px] text-ash max-w-[580px] leading-[1.9] mb-[72px]">
-        We are moving beyond a simple strategy document into a fully operational high-conversion ecosystem. Every layer of your digital presence is engineered to attract, qualify, and convert the right clients without you touching a single cold lead.
-      </p>
+      <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] relative z-[2]">
+        {/* Header */}
+        <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-4 flex items-center gap-[14px]">
+          <span className="w-7 h-px bg-primary inline-block" />
+          The C.A.T.A.L.Y.S.T.™ Ecosystem
+        </p>
+        <h2 className="font-serif text-[clamp(36px,5vw,68px)] font-light text-ink leading-[1.05] tracking-[-0.01em] uppercase mb-4">
+          The Digital<br />
+          <strong className="font-bold">Architecture</strong><br />
+          <em className="italic text-primary normal-case">behind your business.</em>
+        </h2>
+        <p className="text-[15px] text-ash max-w-[580px] leading-[1.9] mb-[72px]">
+          We are moving beyond a simple strategy document into a fully operational high-conversion ecosystem. Every layer of your digital presence is engineered to attract, qualify, and convert the right clients without you touching a single cold lead.
+        </p>
 
-      {/* Five Pillars Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-primary/10 mb-20">
-        {pillars.map((p) => (
-          <div key={p.num} className="group bg-fog p-9 relative overflow-hidden transition-colors duration-400 hover:bg-primary/[0.05]">
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
-            <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
-            <p.Icon className="w-9 h-9 mb-[18px] text-primary opacity-80" strokeWidth={1.2} />
-            <div className="font-serif text-lg font-bold text-ink mb-3 leading-[1.2] uppercase tracking-[0.04em]">{p.title}</div>
-            <p className="text-xs text-ash leading-[1.78]">{p.body}</p>
-          </div>
-        ))}
+        {/* Five Pillars Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-primary/10">
+          {pillars.map((p) => (
+            <div key={p.num} className="group bg-fog p-9 relative overflow-hidden transition-colors duration-400 hover:bg-primary/[0.05]">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+              <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
+              <p.Icon className="w-9 h-9 mb-[18px] text-primary opacity-80" strokeWidth={1.2} />
+              <div className="font-serif text-lg font-bold text-ink mb-3 leading-[1.2] uppercase tracking-[0.04em]">{p.title}</div>
+              <p className="text-xs text-ash leading-[1.78]">{p.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
+    </section>
 
-      {/* Service Tiers Table */}
-      <div className="mb-20">
+    {/* Service Tiers - Black background */}
+    <section className="bg-ink py-[100px] relative">
+      <div className="max-w-[1160px] mx-auto px-6 md:px-[60px]">
         <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-6 flex items-center gap-[14px]">
           <span className="w-7 h-px bg-primary inline-block" />
           Service Tiers & Catalyst Activation
@@ -115,13 +119,13 @@ const CatalystSection = () => (
             </thead>
             <tbody>
               {tiers.map((tier, i) => (
-                <tr key={i} className="border-b border-ink/[0.08] transition-colors hover:bg-primary/[0.04]">
+                <tr key={i} className="border-b border-white/[0.08] transition-colors hover:bg-primary/[0.06]">
                   <td className="py-[22px] align-top">
-                    <div className="font-serif text-[22px] font-bold text-ink mb-[3px] tracking-[0.02em]">{tier.name}</div>
+                    <div className="font-serif text-[22px] font-bold text-white mb-[3px] tracking-[0.02em]">{tier.name}</div>
                     <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary/[0.55]">{tier.cat}</div>
                   </td>
                   <td className="py-[22px] align-top pr-10 hidden md:table-cell">
-                    <p className="text-[13px] text-ash">{tier.activation}</p>
+                    <p className="text-[13px] text-white/60">{tier.activation}</p>
                   </td>
                   <td className="py-[22px] align-top text-right">
                     <div className="font-serif text-[28px] font-bold text-primary tracking-[-0.01em] whitespace-nowrap">{tier.revenue}</div>
@@ -133,19 +137,8 @@ const CatalystSection = () => (
           </table>
         </div>
       </div>
-
-      {/* CTA Row */}
-      <div className="pt-12 border-t border-primary/[0.12]">
-        <h3 className="font-serif text-4xl font-light text-ink leading-[1.15] uppercase tracking-[0.02em] mb-[10px]">
-          Ready to <strong className="font-bold">Activate</strong><br />
-          the Ecosystem?
-        </h3>
-        <p className="text-[13px] text-ash leading-[1.8] max-w-[500px]">
-          The C.A.T.A.L.Y.S.T.™ infrastructure is built. The 50 leads are mapped. The sequences are ready to run. What is missing is the conversation that starts all of it.
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </>
 );
 
 export default CatalystSection;
