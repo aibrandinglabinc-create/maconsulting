@@ -92,8 +92,8 @@ const CatalystSection = () => (
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
               <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
               <p.Icon className="w-9 h-9 mb-[18px] text-primary opacity-80" strokeWidth={1.2} />
-              <div className="font-serif text-lg font-bold text-ink mb-3 leading-[1.2] uppercase tracking-[0.04em]">{p.title}</div>
-              <p className="text-xs text-ash leading-[1.78]">{p.body}</p>
+              <div className="font-serif text-lg font-bold text-white mb-3 leading-[1.2] uppercase tracking-[0.04em]">{p.title}</div>
+              <p className="text-xs text-white/60 leading-[1.78]">{p.body}</p>
             </div>
           ))}
         </div>
