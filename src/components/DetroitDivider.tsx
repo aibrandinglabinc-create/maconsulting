@@ -9,8 +9,10 @@ const DetroitDivider = () => (
         className="font-serif italic uppercase"
         style={{
           fontSize: 13,
-          letterSpacing: "0.4em",
-          color: "rgba(18,196,176,0.5)",
+          letterSpacing: "0.35em",
+          color: "#ffffff",
+          background: "rgba(8,8,8,0.75)",
+          padding: "6px 18px",
         }}
       >
         Detroit &amp; Beyond
