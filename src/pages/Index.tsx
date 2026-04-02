@@ -21,7 +21,6 @@ const Index = () => (
     <NavBar />
     <Hero />
     <Ticker />
-    <Hero />
     
     <CatalystSection />
     <DetroitDivider />
