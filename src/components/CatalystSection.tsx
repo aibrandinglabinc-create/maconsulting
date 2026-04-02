@@ -88,7 +88,7 @@ const CatalystSection = () => (
         {/* Five Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px">
           {pillars.map((p) => (
-            <div key={p.num} className="pillar group relative overflow-hidden p-9 bg-black/70 backdrop-blur-[12px] border border-[rgba(18,196,176,0.12)] hover:bg-[rgba(18,196,176,0.07)] hover:border-[rgba(18,196,176,0.4)] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(18,196,176,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <div key={p.num} className="pillar group relative overflow-hidden p-9 bg-black/70 backdrop-blur-[12px] border-2 border-[rgba(18,196,176,0.18)] hover:bg-[rgba(18,196,176,0.07)] hover:border-[rgba(18,196,176,0.5)] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(18,196,176,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
               <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
               <div className="pillar-icon"><p.Icon className="w-9 h-9 mb-[18px] text-primary" strokeWidth={1.2} /></div>
               <div className="font-serif text-lg font-bold text-white mb-3 leading-[1.2] uppercase tracking-[0.04em]">{p.title}</div>
