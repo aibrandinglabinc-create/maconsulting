@@ -88,7 +88,7 @@ const CatalystSection = () => (
         {/* Five Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px">
           {pillars.map((p) => (
-            <div key={p.num} className="pillar group relative overflow-hidden p-9 bg-black/70 backdrop-blur-[12px] border border-[rgba(18,196,176,0.12)] hover:bg-[rgba(18,196,176,0.07)] hover:border-[rgba(18,196,176,0.4)] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(18,196,176,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <div key={p.num} className="pillar group relative overflow-hidden p-9 bg-black/70 backdrop-blur-[12px] border-2 border-[rgba(18,196,176,0.18)] hover:bg-[rgba(18,196,176,0.07)] hover:border-[rgba(18,196,176,0.5)] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(18,196,176,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
               <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
               <div className="pillar-icon"><p.Icon className="w-9 h-9 mb-[18px] text-primary" strokeWidth={1.2} /></div>
               <div className="font-serif text-lg font-bold text-white mb-3 leading-[1.2] uppercase tracking-[0.04em]">{p.title}</div>
@@ -108,11 +108,10 @@ const CatalystSection = () => (
         </p>
 
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse min-w-[700px]">
+          <table className="w-full border-collapse">
             <thead>
               <tr className="border-b border-primary/25">
-                <th className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/60 pb-4 text-left">Service Category</th>
-                <th className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/60 pb-4 text-left hidden md:table-cell">High-Level Activation</th>
+                <th className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/60 pb-4 text-left pl-6">Service Category</th>
                 <th className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/60 pb-4 text-right">Target Revenue</th>
               </tr>
             </thead>
@@ -125,7 +124,8 @@ const CatalystSection = () => (
                     className="group/row"
                     style={{
                       borderBottom: "1px solid rgba(255,255,255,0.05)",
-                      borderLeft: isFeatured ? "3px solid #12C4B0" : "3px solid rgba(18,196,176,0.25)",
+                      borderLeft: isFeatured ? "3px solid #12C4B0" : "3px solid rgba(18,196,176,0.2)",
+                      paddingLeft: 24,
                       background: isFeatured ? "rgba(18,196,176,0.06)" : "transparent",
                       transition: "all 0.3s ease",
                     }}
@@ -137,19 +137,16 @@ const CatalystSection = () => (
                     }}
                     onMouseLeave={(e) => {
                       if (!isFeatured) {
-                        e.currentTarget.style.borderLeft = "3px solid rgba(18,196,176,0.25)";
+                        e.currentTarget.style.borderLeft = "3px solid rgba(18,196,176,0.2)";
                         e.currentTarget.style.background = "transparent";
                       }
                     }}
                   >
-                    <td className="py-[22px] align-top pl-5">
+                    <td className="py-7 align-top pl-6">
                       <div className="font-serif text-[22px] font-bold text-white mb-[3px] tracking-[0.02em]">{tier.name}</div>
                       <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary/[0.55]">{tier.cat}</div>
                     </td>
-                    <td className="py-[22px] align-top pr-10 hidden md:table-cell">
-                      <p className="text-[13px] text-white/60">{tier.activation}</p>
-                    </td>
-                    <td className="py-[22px] align-top text-right">
+                    <td className="py-7 align-top text-right">
                       <div className="font-serif text-[44px] font-bold text-primary tracking-[-0.01em] whitespace-nowrap leading-none">{tier.revenue}</div>
                       <div className="text-[9px] font-semibold tracking-[0.12em] uppercase text-primary/40 mt-[3px]">{tier.revSub}</div>
                     </td>
