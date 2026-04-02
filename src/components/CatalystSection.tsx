@@ -88,7 +88,7 @@ const CatalystSection = () => (
         {/* Five Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-primary/10">
           {pillars.map((p) => (
-            <div key={p.num} className="group bg-fog p-9 relative overflow-hidden transition-colors duration-400 hover:bg-primary/[0.05]">
+            <div key={p.num} className="group bg-ink p-9 relative overflow-hidden transition-colors duration-400 hover:bg-ink/90">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
               <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
               <p.Icon className="w-9 h-9 mb-[18px] text-primary opacity-80" strokeWidth={1.2} />
