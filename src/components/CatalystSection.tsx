@@ -88,9 +88,7 @@ const CatalystSection = () => (
         {/* Five Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px">
           {pillars.map((p) => (
-            <div key={p.num} className="pillar group relative overflow-hidden p-9 bg-ink" style={{ background: 'rgba(10,10,12,0.94)', backdropFilter: 'blur(12px)', border: '1px solid rgba(18,196,176,0.12)', transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)' }}
-              onMouseEnter={(e) => { const el = e.currentTarget; el.style.background = 'rgba(18,196,176,0.07)'; el.style.border = '1px solid rgba(18,196,176,0.4)'; el.style.transform = 'translateY(-8px)'; el.style.boxShadow = '0 20px 60px rgba(18,196,176,0.15)'; }}
-              onMouseLeave={(e) => { const el = e.currentTarget; el.style.background = 'rgba(10,10,12,0.94)'; el.style.border = '1px solid rgba(18,196,176,0.12)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; }}
+            <div key={p.num} className="pillar group relative overflow-hidden p-9 bg-black/70 backdrop-blur-[12px] border border-[rgba(18,196,176,0.12)] hover:bg-[rgba(18,196,176,0.07)] hover:border-[rgba(18,196,176,0.4)] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(18,196,176,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
             >
               <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
               <div className="pillar-icon"><p.Icon className="w-9 h-9 mb-[18px] text-primary" strokeWidth={1.2} /></div>
