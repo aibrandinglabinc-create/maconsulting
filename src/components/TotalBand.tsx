@@ -9,9 +9,6 @@ const TotalBand = () => (
     <blockquote className="font-serif text-[22px] italic text-white/[0.28] max-w-[680px] mx-auto mb-11 border-l-[3px] border-primary pl-6 text-left leading-[1.5]">
       "You have more intellectual capital than most consulting firms hold in their entire practice. The only question is whether you will deploy it."
     </blockquote>
-    <a href="#" className="inline-block font-sans text-sm font-bold tracking-[0.2em] uppercase py-[18px] px-[52px] bg-primary text-white transition-all hover:bg-primary-deep hover:-translate-y-[2px] shadow-[0_4px_24px_hsla(173,85%,33%,0.3)] hover:shadow-[0_8px_40px_hsla(173,85%,33%,0.45)]">
-      Schedule Strategy Call
-    </a>
     <div className="text-xs text-white/20 tracking-[0.2em] uppercase mt-10">
       Confidential · Prepared by AI Branding Lab, Inc. · March 2026
     </div>
