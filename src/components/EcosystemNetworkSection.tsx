@@ -185,12 +185,9 @@ export default function EcosystemNetworkSection() {
           <strong style={{ fontWeight:700 }}>ARCHITECTURE</strong><br />
           <em style={{ fontStyle:'italic', color:'#12C4B0' }}>behind your business.</em>
         </h2>
-        <p style={{ fontSize:14, color:'#8C8882', lineHeight:1.88, maxWidth:440, marginBottom:40 }}>
-          We are moving beyond a simple strategy document into a fully operational high-conversion ecosystem. Every layer of your digital presence is engineered to attract, qualify, and convert the right clients without you touching a single cold lead.
+        <p style={{ fontSize:16, color:'#8C8882', lineHeight:1.88, maxWidth:440, marginBottom:40 }}>
+          We have built a fully operational high-conversion ecosystem. Every layer of your digital presence is engineered to attract, qualify, and convert the right clients without you touching a single cold lead.
         </p>
-        <a href="#" style={{ display:'inline-block', fontSize:10, fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', padding:'14px 34px', background:'#12C4B0', color:'#fff', textDecoration:'none', boxShadow:'0 8px 32px rgba(18,196,176,.25)' }}>
-          SCHEDULE STRATEGY CALL
-        </a>
       </div>
 
       <div ref={containerRef} style={{ position:'relative', height:580, display:'flex', alignItems:'center', justifyContent:'center' }}>

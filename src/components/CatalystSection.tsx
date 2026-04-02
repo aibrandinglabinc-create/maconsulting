@@ -81,8 +81,8 @@ const CatalystSection = () => (
           <strong className="font-bold">Architecture</strong><br />
           <em className="italic text-primary normal-case">behind your business.</em>
         </h2>
-        <p className="text-[15px] text-ash max-w-[580px] leading-[1.9] mb-[72px]">
-          We are moving beyond a simple strategy document into a fully operational high-conversion ecosystem. Every layer of your digital presence is engineered to attract, qualify, and convert the right clients without you touching a single cold lead.
+        <p className="text-[17px] text-ash max-w-[580px] leading-[1.9] mb-[72px]">
+          We have built a fully operational high-conversion ecosystem. Every layer of your digital presence is engineered to attract, qualify, and convert the right clients without you touching a single cold lead.
         </p>
 
         {/* Five Pillars Grid */}
