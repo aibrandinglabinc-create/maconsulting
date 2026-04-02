@@ -180,3 +180,35 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Pillar icon styles */
+.pillar-icon svg {
+  stroke: #12C4B0;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(18,196,176,0.6));
+  transition: all 0.4s ease;
+}
+.pillar:hover .pillar-icon svg {
+  filter: drop-shadow(0 0 14px rgba(18,196,176,0.95)) drop-shadow(0 0 28px rgba(18,196,176,0.4));
+  transform: scale(1.2) rotate(5deg);
+  stroke: #fff;
+}
+@keyframes iconSweep {
+  0% { stroke-dashoffset: 200; opacity: 0; }
+  40% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+.pillar-icon svg path,
+.pillar-icon svg circle,
+.pillar-icon svg rect,
+.pillar-icon svg polyline,
+.pillar-icon svg line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: iconSweep 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.pillar:nth-child(1) .pillar-icon svg * { animation-delay: 0.1s; }
+.pillar:nth-child(2) .pillar-icon svg * { animation-delay: 0.3s; }
+.pillar:nth-child(3) .pillar-icon svg * { animation-delay: 0.5s; }
+.pillar:nth-child(4) .pillar-icon svg * { animation-delay: 0.7s; }
+.pillar:nth-child(5) .pillar-icon svg * { animation-delay: 0.9s; }
