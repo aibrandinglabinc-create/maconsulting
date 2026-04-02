@@ -41,12 +41,6 @@ const NavBar = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href="#start"
-            className="text-[10px] font-bold tracking-[0.16em] uppercase py-[9px] px-[22px] bg-white/[0.08] border border-white/[0.15] text-white/70 no-underline transition-all duration-300 hover:bg-white/[0.14] hover:text-white hover:-translate-y-px"
-          >
-            Start Here
-          </a>
         </div>
       </div>
     </nav>
