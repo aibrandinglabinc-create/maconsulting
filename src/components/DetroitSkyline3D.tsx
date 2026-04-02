@@ -99,15 +99,15 @@ const DetroitSkyline3D = () => {
     const ambientLight = new THREE.AmbientLight(0x111111, 0.5);
     scene.add(ambientLight);
 
-    const tealLight = new THREE.PointLight(TEAL.getHex(), 2, 30);
+    const tealLight = new THREE.PointLight(TEAL.getHex(), 5, 40);
     tealLight.position.set(0, 12, 0);
     scene.add(tealLight);
 
-    const rimLight = new THREE.DirectionalLight(0x1a3a4a, 0.8);
+    const rimLight = new THREE.DirectionalLight(0x1a3a4a, 1.5);
     rimLight.position.set(-10, 8, -5);
     scene.add(rimLight);
 
-    const fillLight = new THREE.PointLight(TEAL.getHex(), 0.5, 20);
+    const fillLight = new THREE.PointLight(TEAL.getHex(), 3, 25);
     fillLight.position.set(8, 4, 8);
     scene.add(fillLight);
 
@@ -121,28 +121,31 @@ const DetroitSkyline3D = () => {
 
     const buildings: BuildingMesh[] = [];
 
-    BUILDINGS.forEach(([x, z, w, d, h], i) => {
-      const geo = new THREE.BoxGeometry(w, h, d);
+    BUILDINGS.forEach(([x, z, bw, bd, h], i) => {
+      const thickW = bw * 3;
+      const thickD = bd * 3;
+      const geo = new THREE.BoxGeometry(thickW, h, thickD);
       geo.translate(0, h / 2, 0);
 
       const mat = new THREE.MeshStandardMaterial({
-        color: new THREE.Color("#0d0d0f"),
-        metalness: 0.9,
-        roughness: 0.3,
-        transparent: true,
-        opacity: 0.85,
+        color: new THREE.Color("#2A2A2A"),
+        metalness: 0.85,
+        roughness: 0.35,
+        transparent: false,
+        opacity: 1.0,
       });
 
       const mesh = new THREE.Mesh(geo, mat);
       mesh.position.set(x, 0, z);
-      mesh.scale.y = 0.001; // start flat
+      mesh.scale.y = 0.001;
 
-      // Wireframe edges
+      // Wireframe edges — sharp, no transparency
       const edgeGeo = new THREE.EdgesGeometry(geo);
       const edgeMat = new THREE.LineBasicMaterial({
         color: TEAL,
-        transparent: true,
-        opacity: 0.35,
+        transparent: false,
+        opacity: 1.0,
+        linewidth: 2,
       });
       const edges = new THREE.LineSegments(edgeGeo, edgeMat);
       edges.position.copy(mesh.position);
@@ -321,7 +324,7 @@ const DetroitSkyline3D = () => {
   return (
     <div
       className="absolute right-0 top-0 bottom-0 pointer-events-none z-[2] overflow-hidden hidden lg:block"
-      style={{ width: "52%" }}
+      style={{ width: "45%" }}
     >
       {/* Canvas container */}
       <div ref={containerRef} className="absolute inset-0 w-full h-full" />
@@ -331,7 +334,7 @@ const DetroitSkyline3D = () => {
         className="absolute top-0 left-0 bottom-0 z-[20]"
         style={{
           width: "40%",
-          background: "linear-gradient(to right, hsl(0 0% 5%), transparent)",
+          background: "linear-gradient(to right, #1A1A1A, transparent)",
         }}
       />
 
@@ -343,14 +346,6 @@ const DetroitSkyline3D = () => {
             "repeating-linear-gradient(0deg, transparent, transparent 2px, hsla(173,85%,33%,0.08) 2px, hsla(173,85%,33%,0.08) 4px)",
         }}
       />
-
-      {/* Detroit label */}
-      <div className="absolute bottom-8 right-8 z-[25] text-right">
-        <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-primary/40">
-          Detroit & Beyond
-        </p>
-        <div className="w-8 h-px bg-primary/20 mt-2 ml-auto" />
-      </div>
     </div>
   );
 };
