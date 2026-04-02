@@ -43,7 +43,7 @@ const NavBar = () => {
           ))}
           <a
             href="#start"
-            className="text-[10px] font-bold tracking-[0.16em] uppercase py-[9px] px-[22px] bg-primary text-ink no-underline transition-all duration-300 hover:bg-white hover:-translate-y-px hover:shadow-[0_8px_32px_hsla(173,85%,33%,0.4)]"
+            className="text-[10px] font-bold tracking-[0.16em] uppercase py-[9px] px-[22px] bg-white/[0.08] border border-white/[0.15] text-white/70 no-underline transition-all duration-300 hover:bg-white/[0.14] hover:text-white hover:-translate-y-px"
           >
             Start Here
           </a>
