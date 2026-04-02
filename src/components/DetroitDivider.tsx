@@ -11,8 +11,7 @@ const DetroitDivider = () => (
           fontSize: 13,
           letterSpacing: "0.35em",
           color: "#ffffff",
-          background: "rgba(8,8,8,0.75)",
-          padding: "6px 18px",
+          textShadow: "0 0 20px rgba(8,8,8,0.9), 0 0 40px rgba(8,8,8,0.9)",
         }}
       >
         Detroit &amp; Beyond
