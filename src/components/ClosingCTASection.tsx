@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
 
 export default function ClosingCTASection() {
   return (
@@ -64,23 +63,6 @@ export default function ClosingCTASection() {
           </span>
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <a
-            href="mailto:erika@aibrandinglabinc.com"
-            className="group relative inline-flex items-center justify-center gap-3 bg-[#12C4B0] text-[#070709] px-10 py-5 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(18,196,176,0.3)]"
-          >
-            <span className="relative flex items-center gap-2 text-[12px] font-bold tracking-[0.16em] uppercase">
-              Schedule Strategy Call
-            </span>
-            <ArrowUpRight className="relative w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
-        </motion.div>
       </div>
 
       {/* Footer strip */}
