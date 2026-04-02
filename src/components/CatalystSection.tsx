@@ -86,12 +86,14 @@ const CatalystSection = () => (
         </p>
 
         {/* Five Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-primary/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px">
           {pillars.map((p) => (
-            <div key={p.num} className="group bg-ink p-9 relative overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_8px_32px_rgba(18,196,176,0.15)] hover:z-10">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+            <div key={p.num} className="pillar group relative overflow-hidden p-9" style={{ background: 'rgba(255,255,255,0.02)', backdropFilter: 'blur(12px)', border: '1px solid rgba(18,196,176,0.12)', transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)' }}
+              onMouseEnter={(e) => { const el = e.currentTarget; el.style.background = 'rgba(18,196,176,0.07)'; el.style.border = '1px solid rgba(18,196,176,0.4)'; el.style.transform = 'translateY(-8px)'; el.style.boxShadow = '0 20px 60px rgba(18,196,176,0.15)'; }}
+              onMouseLeave={(e) => { const el = e.currentTarget; el.style.background = 'rgba(255,255,255,0.02)'; el.style.border = '1px solid rgba(18,196,176,0.12)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; }}
+            >
               <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary/50 mb-5">{p.num}</div>
-              <p.Icon className="w-9 h-9 mb-[18px] text-primary opacity-80" strokeWidth={1.2} />
+              <div className="pillar-icon"><p.Icon className="w-9 h-9 mb-[18px] text-primary" strokeWidth={1.2} /></div>
               <div className="font-serif text-lg font-bold text-white mb-3 leading-[1.2] uppercase tracking-[0.04em]">{p.title}</div>
               <p className="text-xs text-white/60 leading-[1.78]">{p.body}</p>
             </div>
