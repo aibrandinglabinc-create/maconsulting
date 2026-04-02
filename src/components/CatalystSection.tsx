@@ -76,7 +76,7 @@ const CatalystSection = () => (
           <span className="w-7 h-px bg-primary inline-block" />
           The C.A.T.A.L.Y.S.T.™ Ecosystem
         </p>
-        <h2 className="font-serif text-[clamp(36px,5vw,68px)] font-light text-ink leading-[1.05] tracking-[-0.01em] uppercase mb-4">
+        <h2 className="font-serif text-[clamp(36px,5vw,68px)] font-light text-background leading-[1.05] tracking-[-0.01em] uppercase mb-4">
           The Digital<br />
           <strong className="font-bold">Architecture</strong><br />
           <em className="italic text-primary normal-case">behind your business.</em>
