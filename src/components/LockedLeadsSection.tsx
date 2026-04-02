@@ -178,9 +178,9 @@ export default function LockedLeadsSection() {
                 </p>
                 <a
                   href="mailto:erika@aibrandinglabinc.com"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-[#0A0A0C] text-white px-8 py-4 overflow-hidden"
+                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 overflow-hidden"
+                  style={{ background: 'linear-gradient(90deg, #042E28 0%, #0A6B5E 18%, #0D9B8B 32%, #12C4B0 48%, #C8FFF8 56%, #0D9B8B 70%, #042E28 100%)', backgroundSize: '200% auto', animation: 'sweep 3s linear infinite', color: '#080808' }}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#12C4B0] to-[#0A9B8B] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                   <span className="relative flex items-center gap-2 text-[12px] font-bold tracking-[0.16em] uppercase">
                     <Sparkles className="w-4 h-4" />
                     Activate The Full List
