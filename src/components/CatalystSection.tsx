@@ -97,8 +97,11 @@ const CatalystSection = () => (
         ))}
       </div>
 
-      {/* Service Tiers Table */}
-      <div className="mb-20">
+    </div>
+
+    {/* Service Tiers Section - Black background */}
+    <section className="bg-ink py-[100px] relative">
+      <div className="max-w-[1160px] mx-auto px-6 md:px-[60px]">
         <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-6 flex items-center gap-[14px]">
           <span className="w-7 h-px bg-primary inline-block" />
           Service Tiers & Catalyst Activation
@@ -115,13 +118,13 @@ const CatalystSection = () => (
             </thead>
             <tbody>
               {tiers.map((tier, i) => (
-                <tr key={i} className="border-b border-ink/[0.08] transition-colors hover:bg-primary/[0.04]">
+                <tr key={i} className="border-b border-white/[0.08] transition-colors hover:bg-primary/[0.06]">
                   <td className="py-[22px] align-top">
-                    <div className="font-serif text-[22px] font-bold text-ink mb-[3px] tracking-[0.02em]">{tier.name}</div>
+                    <div className="font-serif text-[22px] font-bold text-white mb-[3px] tracking-[0.02em]">{tier.name}</div>
                     <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary/[0.55]">{tier.cat}</div>
                   </td>
                   <td className="py-[22px] align-top pr-10 hidden md:table-cell">
-                    <p className="text-[13px] text-ash">{tier.activation}</p>
+                    <p className="text-[13px] text-white/60">{tier.activation}</p>
                   </td>
                   <td className="py-[22px] align-top text-right">
                     <div className="font-serif text-[28px] font-bold text-primary tracking-[-0.01em] whitespace-nowrap">{tier.revenue}</div>
@@ -133,6 +136,7 @@ const CatalystSection = () => (
           </table>
         </div>
       </div>
+    </section>
 
     </div>
   </section>
