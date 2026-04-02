@@ -4,7 +4,7 @@ const pillars = [
   {
     num: "01",
     Icon: Globe,
-    title: "The Authority Website",
+    title: "Authority Website",
     body: "A high-performance professional hub anchoring you as a fractional executive, not an hourly contractor. Interactive blueprint, tabbed navigation, Locomotive scroll effects.",
   },
   {
