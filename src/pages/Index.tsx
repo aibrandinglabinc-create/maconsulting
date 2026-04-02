@@ -13,7 +13,6 @@ import OutreachStrategy from "@/components/OutreachStrategy";
 import TotalBand from "@/components/TotalBand";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";
-import Ticker from "@/components/Ticker";
 
 const Index = () => (
   <div className="min-h-screen bg-fog">
@@ -22,7 +21,6 @@ const Index = () => (
     <Hero />
     
     <CatalystSection />
-    <Ticker />
     <DetroitDivider />
     <div className="max-w-[1160px] mx-auto px-6 py-10 space-y-16">
       <MarketReality />
