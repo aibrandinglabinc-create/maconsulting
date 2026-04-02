@@ -66,7 +66,7 @@ const tiers = [
 
 const CatalystSection = () => (
   <>
-    <section className="bg-background py-[120px] relative overflow-hidden">
+    <section className="bg-ink py-[120px] relative overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(hsla(173,85%,33%,0.06)_1px,transparent_1px),linear-gradient(90deg,hsla(173,85%,33%,0.06)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
