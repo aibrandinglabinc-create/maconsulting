@@ -153,11 +153,7 @@ const Hero = () => (
         </div>
       </div>
 
-      <div className="w-full mt-6 md:mt-8 opacity-0 animate-[fadeup_0.8s_1.35s_ease_forwards]">
-        <Ticker />
-      </div>
     </div>
-
   </section>
 );
 
