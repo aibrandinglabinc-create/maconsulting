@@ -118,21 +118,45 @@ const CatalystSection = () => (
               </tr>
             </thead>
             <tbody>
-              {tiers.map((tier, i) => (
-                <tr key={i} className="border-b border-white/[0.08] transition-colors hover:bg-primary/[0.06]">
-                  <td className="py-[22px] align-top">
-                    <div className="font-serif text-[22px] font-bold text-white mb-[3px] tracking-[0.02em]">{tier.name}</div>
-                    <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary/[0.55]">{tier.cat}</div>
-                  </td>
-                  <td className="py-[22px] align-top pr-10 hidden md:table-cell">
-                    <p className="text-[13px] text-white/60">{tier.activation}</p>
-                  </td>
-                  <td className="py-[22px] align-top text-right">
-                    <div className="font-serif text-[28px] font-bold text-primary tracking-[-0.01em] whitespace-nowrap">{tier.revenue}</div>
-                    <div className="text-[9px] font-semibold tracking-[0.12em] uppercase text-primary/40 mt-[3px]">{tier.revSub}</div>
-                  </td>
-                </tr>
-              ))}
+              {tiers.map((tier, i) => {
+                const isFeatured = tier.name === "Strategic Implementation";
+                return (
+                  <tr
+                    key={i}
+                    className="group/row"
+                    style={{
+                      borderBottom: "1px solid rgba(255,255,255,0.05)",
+                      borderLeft: isFeatured ? "3px solid #12C4B0" : "3px solid rgba(18,196,176,0.25)",
+                      background: isFeatured ? "rgba(18,196,176,0.06)" : "transparent",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isFeatured) {
+                        e.currentTarget.style.borderLeft = "3px solid #12C4B0";
+                        e.currentTarget.style.background = "rgba(18,196,176,0.04)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isFeatured) {
+                        e.currentTarget.style.borderLeft = "3px solid rgba(18,196,176,0.25)";
+                        e.currentTarget.style.background = "transparent";
+                      }
+                    }}
+                  >
+                    <td className="py-[22px] align-top pl-5">
+                      <div className="font-serif text-[22px] font-bold text-white mb-[3px] tracking-[0.02em]">{tier.name}</div>
+                      <div className="text-[9px] font-bold tracking-[0.16em] uppercase text-primary/[0.55]">{tier.cat}</div>
+                    </td>
+                    <td className="py-[22px] align-top pr-10 hidden md:table-cell">
+                      <p className="text-[13px] text-white/60">{tier.activation}</p>
+                    </td>
+                    <td className="py-[22px] align-top text-right">
+                      <div className="font-serif text-[44px] font-bold text-primary tracking-[-0.01em] whitespace-nowrap leading-none">{tier.revenue}</div>
+                      <div className="text-[9px] font-semibold tracking-[0.12em] uppercase text-primary/40 mt-[3px]">{tier.revSub}</div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
