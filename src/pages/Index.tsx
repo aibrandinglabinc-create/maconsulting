@@ -14,6 +14,7 @@ import OfferArchitecture from "@/components/OfferArchitecture";
 import OutreachStrategy from "@/components/OutreachStrategy";
 import LockedLeadsSection from "@/components/LockedLeadsSection";
 import TotalBand from "@/components/TotalBand";
+import ClosingCTASection from "@/components/ClosingCTASection";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";
 
@@ -40,6 +41,7 @@ const Index = () => (
       <LockedLeadsSection />
     </div>
     <TotalBand />
+    <ClosingCTASection />
     <Footer />
   </div>
 );
