@@ -25,58 +25,58 @@ const DetroitDivider = () => (
 
       {/* === CENTER CLUSTER (tallest) === */}
       {/* Foreground — brightest, thickest */}
-      <rect x="656" y="55" width="8" height="345" fill="none" stroke="rgba(18,196,176,0.9)" strokeWidth="2" />
-      <rect x="634" y="95" width="8" height="305" fill="none" stroke="rgba(13,155,139,0.8)" strokeWidth="1.8" />
-      <rect x="678" y="95" width="8" height="305" fill="none" stroke="rgba(13,155,139,0.8)" strokeWidth="1.8" />
+      <rect x="650" y="55" width="20" height="345" fill="none" stroke="rgba(18,196,176,0.95)" strokeWidth="3.5" />
+      <rect x="622" y="95" width="18" height="305" fill="none" stroke="rgba(13,155,139,0.88)" strokeWidth="3" />
+      <rect x="682" y="95" width="18" height="305" fill="none" stroke="rgba(13,155,139,0.88)" strokeWidth="3" />
       {/* Mid-ground */}
-      <rect x="614" y="135" width="7" height="265" fill="none" stroke="rgba(10,107,94,0.7)" strokeWidth="1.5" />
-      <rect x="699" y="135" width="7" height="265" fill="none" stroke="rgba(10,107,94,0.7)" strokeWidth="1.5" />
+      <rect x="598" y="135" width="16" height="265" fill="none" stroke="rgba(10,107,94,0.75)" strokeWidth="2.5" />
+      <rect x="706" y="135" width="16" height="265" fill="none" stroke="rgba(10,107,94,0.75)" strokeWidth="2.5" />
       {/* Background */}
-      <rect x="596" y="168" width="6" height="232" fill="none" stroke="rgba(10,107,94,0.45)" strokeWidth="1.2" />
-      <rect x="717" y="168" width="6" height="232" fill="none" stroke="rgba(10,107,94,0.45)" strokeWidth="1.2" />
+      <rect x="576" y="168" width="14" height="232" fill="none" stroke="rgba(10,107,94,0.55)" strokeWidth="2" />
+      <rect x="730" y="168" width="14" height="232" fill="none" stroke="rgba(10,107,94,0.55)" strokeWidth="2" />
 
       {/* Center spire */}
-      <line x1="660" y1="55" x2="660" y2="24" stroke="rgba(18,196,176,0.85)" strokeWidth="1.5" />
-      <circle cx="660" cy="22" r="2.5" fill="none" stroke="rgba(18,196,176,0.8)" strokeWidth="1" />
+      <line x1="660" y1="55" x2="660" y2="20" stroke="rgba(18,196,176,0.9)" strokeWidth="2" />
+      <circle cx="660" cy="18" r="4" fill="none" stroke="rgba(18,196,176,0.85)" strokeWidth="1.5" />
 
       {/* Center horizontal cross-beams */}
-      <line x1="634" y1="150" x2="686" y2="150" stroke="rgba(13,155,139,0.4)" strokeWidth="0.8" />
-      <line x1="634" y1="210" x2="686" y2="210" stroke="rgba(13,155,139,0.4)" strokeWidth="0.8" />
-      <line x1="634" y1="270" x2="686" y2="270" stroke="rgba(13,155,139,0.4)" strokeWidth="0.8" />
-      <line x1="634" y1="330" x2="686" y2="330" stroke="rgba(13,155,139,0.4)" strokeWidth="0.8" />
+      <line x1="622" y1="150" x2="700" y2="150" stroke="rgba(13,155,139,0.5)" strokeWidth="1.2" />
+      <line x1="622" y1="210" x2="700" y2="210" stroke="rgba(13,155,139,0.5)" strokeWidth="1.2" />
+      <line x1="622" y1="270" x2="700" y2="270" stroke="rgba(13,155,139,0.5)" strokeWidth="1.2" />
+      <line x1="622" y1="330" x2="700" y2="330" stroke="rgba(13,155,139,0.5)" strokeWidth="1.2" />
 
       {/* === LEFT CLUSTER === */}
-      <rect x="474" y="135" width="8" height="265" fill="none" stroke="rgba(13,155,139,0.8)" strokeWidth="1.8" />
-      <rect x="500" y="160" width="7" height="240" fill="none" stroke="rgba(10,107,94,0.65)" strokeWidth="1.5" />
-      <rect x="448" y="180" width="7" height="220" fill="none" stroke="rgba(10,107,94,0.6)" strokeWidth="1.5" />
-      <rect x="526" y="200" width="6" height="200" fill="none" stroke="rgba(10,107,94,0.45)" strokeWidth="1.2" />
-      <rect x="422" y="218" width="6" height="182" fill="none" stroke="rgba(10,107,94,0.4)" strokeWidth="1.2" />
+      <rect x="466" y="135" width="20" height="265" fill="none" stroke="rgba(13,155,139,0.85)" strokeWidth="3" />
+      <rect x="494" y="160" width="18" height="240" fill="none" stroke="rgba(10,107,94,0.72)" strokeWidth="2.5" />
+      <rect x="438" y="180" width="16" height="220" fill="none" stroke="rgba(10,107,94,0.65)" strokeWidth="2.2" />
+      <rect x="520" y="200" width="14" height="200" fill="none" stroke="rgba(10,107,94,0.52)" strokeWidth="2" />
+      <rect x="412" y="218" width="14" height="182" fill="none" stroke="rgba(10,107,94,0.45)" strokeWidth="1.8" />
       {/* Receding left buildings */}
-      <rect x="396" y="242" width="5" height="158" fill="none" stroke="rgba(4,46,40,0.55)" strokeWidth="1" />
-      <rect x="368" y="262" width="5" height="138" fill="none" stroke="rgba(4,46,40,0.45)" strokeWidth="1" />
-      <rect x="340" y="282" width="4" height="118" fill="none" stroke="rgba(4,46,40,0.35)" strokeWidth="0.8" />
-      <rect x="312" y="298" width="4" height="102" fill="none" stroke="rgba(4,46,40,0.28)" strokeWidth="0.8" />
-      <rect x="282" y="312" width="4" height="88" fill="none" stroke="rgba(4,46,40,0.2)" strokeWidth="0.7" />
+      <rect x="386" y="242" width="12" height="158" fill="none" stroke="rgba(4,46,40,0.65)" strokeWidth="1.5" />
+      <rect x="358" y="262" width="10" height="138" fill="none" stroke="rgba(4,46,40,0.55)" strokeWidth="1.3" />
+      <rect x="330" y="282" width="9" height="118" fill="none" stroke="rgba(4,46,40,0.45)" strokeWidth="1.1" />
+      <rect x="302" y="298" width="8" height="102" fill="none" stroke="rgba(4,46,40,0.35)" strokeWidth="1" />
+      <rect x="272" y="312" width="7" height="88" fill="none" stroke="rgba(4,46,40,0.25)" strokeWidth="0.9" />
       {/* Left spire */}
-      <line x1="478" y1="135" x2="478" y2="108" stroke="rgba(13,155,139,0.7)" strokeWidth="1.2" />
-      <circle cx="478" cy="106" r="2" fill="none" stroke="rgba(18,196,176,0.7)" strokeWidth="0.8" />
+      <line x1="476" y1="135" x2="476" y2="104" stroke="rgba(13,155,139,0.8)" strokeWidth="1.8" />
+      <circle cx="476" cy="102" r="3" fill="none" stroke="rgba(18,196,176,0.75)" strokeWidth="1.2" />
 
       {/* === RIGHT CLUSTER === */}
-      <rect x="898" y="135" width="8" height="265" fill="none" stroke="rgba(13,155,139,0.8)" strokeWidth="1.8" />
-      <rect x="872" y="160" width="7" height="240" fill="none" stroke="rgba(10,107,94,0.65)" strokeWidth="1.5" />
-      <rect x="924" y="180" width="7" height="220" fill="none" stroke="rgba(10,107,94,0.6)" strokeWidth="1.5" />
-      <rect x="846" y="200" width="6" height="200" fill="none" stroke="rgba(10,107,94,0.45)" strokeWidth="1.2" />
-      <rect x="950" y="218" width="6" height="182" fill="none" stroke="rgba(10,107,94,0.4)" strokeWidth="1.2" />
+      <rect x="894" y="135" width="20" height="265" fill="none" stroke="rgba(13,155,139,0.85)" strokeWidth="3" />
+      <rect x="866" y="160" width="18" height="240" fill="none" stroke="rgba(10,107,94,0.72)" strokeWidth="2.5" />
+      <rect x="922" y="180" width="16" height="220" fill="none" stroke="rgba(10,107,94,0.65)" strokeWidth="2.2" />
+      <rect x="840" y="200" width="14" height="200" fill="none" stroke="rgba(10,107,94,0.52)" strokeWidth="2" />
+      <rect x="948" y="218" width="14" height="182" fill="none" stroke="rgba(10,107,94,0.45)" strokeWidth="1.8" />
       {/* Receding right buildings */}
-      <rect x="978" y="242" width="5" height="158" fill="none" stroke="rgba(4,46,40,0.55)" strokeWidth="1" />
-      <rect x="1006" y="262" width="5" height="138" fill="none" stroke="rgba(4,46,40,0.45)" strokeWidth="1" />
-      <rect x="1036" y="282" width="4" height="118" fill="none" stroke="rgba(4,46,40,0.35)" strokeWidth="0.8" />
-      <rect x="1066" y="298" width="4" height="102" fill="none" stroke="rgba(4,46,40,0.28)" strokeWidth="0.8" />
-      <rect x="1097" y="312" width="4" height="88" fill="none" stroke="rgba(4,46,40,0.2)" strokeWidth="0.7" />
-      <rect x="1128" y="322" width="4" height="78" fill="none" stroke="rgba(4,46,40,0.15)" strokeWidth="0.7" />
+      <rect x="974" y="242" width="12" height="158" fill="none" stroke="rgba(4,46,40,0.65)" strokeWidth="1.5" />
+      <rect x="1002" y="262" width="10" height="138" fill="none" stroke="rgba(4,46,40,0.55)" strokeWidth="1.3" />
+      <rect x="1032" y="282" width="9" height="118" fill="none" stroke="rgba(4,46,40,0.45)" strokeWidth="1.1" />
+      <rect x="1062" y="298" width="8" height="102" fill="none" stroke="rgba(4,46,40,0.35)" strokeWidth="1" />
+      <rect x="1093" y="312" width="7" height="88" fill="none" stroke="rgba(4,46,40,0.25)" strokeWidth="0.9" />
+      <rect x="1124" y="322" width="7" height="78" fill="none" stroke="rgba(4,46,40,0.18)" strokeWidth="0.9" />
       {/* Right spire */}
-      <line x1="902" y1="135" x2="902" y2="108" stroke="rgba(13,155,139,0.7)" strokeWidth="1.2" />
-      <circle cx="902" cy="106" r="2" fill="none" stroke="rgba(18,196,176,0.7)" strokeWidth="0.8" />
+      <line x1="904" y1="135" x2="904" y2="104" stroke="rgba(13,155,139,0.8)" strokeWidth="1.8" />
+      <circle cx="904" cy="102" r="3" fill="none" stroke="rgba(18,196,176,0.75)" strokeWidth="1.2" />
 
       {/* === PERSPECTIVE VANISHING LINES === */}
       <line x1="0" y1="400" x2="700" y2="342" stroke="rgba(18,196,176,0.15)" strokeWidth="0.5" />
@@ -87,30 +87,33 @@ const DetroitDivider = () => (
       <line x1="900" y1="400" x2="700" y2="355" stroke="rgba(18,196,176,0.07)" strokeWidth="0.3" />
     </svg>
 
-    {/* Centered text */}
+    {/* Centered text — large, non-italic, wide tracking */}
     <div
-      className="absolute inset-0 flex items-center justify-center"
-      style={{ zIndex: 10 }}
+      style={{
+        position: 'absolute',
+        inset: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 10,
+      }}
     >
       <p
-        className="font-serif italic uppercase text-center"
         style={{
-          fontSize: 13,
-          letterSpacing: "0.35em",
-          color: "#ffffff",
-          textShadow:
-            "0 0 20px rgba(8,8,8,0.9), 0 0 40px rgba(8,8,8,0.9)",
+          fontFamily: "'Cormorant Garamond', serif",
+          fontStyle: 'normal',
+          fontWeight: 300,
+          fontSize: 'clamp(28px, 4vw, 52px)',
+          letterSpacing: '0.55em',
+          textTransform: 'uppercase',
+          color: '#ffffff',
+          textAlign: 'center',
+          margin: 0,
+          textShadow: '0 2px 40px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.7)',
         }}
       >
         Detroit &amp; Beyond
       </p>
-    </div>
-
-    <div className="absolute bottom-8 right-8 z-[25] text-right">
-      <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-primary/40">
-        Detroit &amp; Beyond
-      </p>
-      <div className="w-8 h-px bg-primary/20 mt-2 ml-auto"></div>
     </div>
   </section>
 );

@@ -264,58 +264,6 @@ const CatalystSection = () => (
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div
-          style={{
-            marginTop: 64,
-            padding: '40px 48px',
-            background: 'rgba(18,196,176,0.05)',
-            border: '1px solid rgba(18,196,176,0.2)',
-            borderRadius: 12,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: 24,
-          }}
-        >
-          <div>
-            <h4
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: 26,
-                fontWeight: 600,
-                color: '#ffffff',
-                marginBottom: 8,
-              }}
-            >
-              Ready to <em style={{ color: '#12C4B0', fontStyle: 'italic' }}>Activate</em> the Ecosystem?
-            </h4>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: 480 }}>
-              The C.A.T.A.L.Y.S.T.™ infrastructure is built. The 50 leads are mapped. The sequences are ready to run.
-            </p>
-          </div>
-          <a
-            href="#opportunity"
-            style={{
-              display: 'inline-block',
-              padding: '14px 32px',
-              background: '#12C4B0',
-              color: '#000',
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              borderRadius: 6,
-              textDecoration: 'none',
-              whiteSpace: 'nowrap',
-              transition: 'all 0.3s ease',
-            }}
-          >
-            Schedule Strategy Call
-          </a>
-        </div>
       </div>
     </section>
   </>
