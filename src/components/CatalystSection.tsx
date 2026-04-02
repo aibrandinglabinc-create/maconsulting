@@ -159,27 +159,7 @@ const CatalystSection = () => (
               }}
               className="group hover:border-[rgba(18,196,176,0.5)] hover:bg-[rgba(18,196,176,0.06)] hover:-translate-y-1 hover:shadow-[0_24px_64px_rgba(18,196,176,0.12)]"
             >
-              {/* Featured badge */}
-              {tier.featured && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 20,
-                    right: 20,
-                    background: '#12C4B0',
-                    color: '#000',
-                    fontSize: 8,
-                    fontWeight: 700,
-                    letterSpacing: '0.2em',
-                    padding: '4px 10px',
-                    borderRadius: 4,
-                    fontFamily: "'Montserrat', sans-serif",
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Recommended
-                </div>
-              )}
+
 
               {/* Card number */}
               <div
@@ -278,23 +258,7 @@ const CatalystSection = () => (
                     {tier.revSub}
                   </div>
                 </div>
-                {/* Arrow indicator */}
-                <div
-                  style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: '50%',
-                    border: '1px solid rgba(18,196,176,0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'rgba(18,196,176,0.5)',
-                    fontSize: 18,
-                    flexShrink: 0,
-                  }}
-                >
-                  →
-                </div>
+
               </div>
             </div>
           ))}
