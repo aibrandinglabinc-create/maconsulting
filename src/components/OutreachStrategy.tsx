@@ -1,10 +1,8 @@
-import SectionHeader from "./SectionHeader";
-
 const channels = [
   {
-    icon: "✉️",
+    num: "01",
     name: "Warm Email First",
-    rate: "25% to 40% response rate",
+    rate: "25% TO 40% RESPONSE RATE",
     body: "Highly personalized emails referencing a shared connection or a specific public activity. Warm outreach yields 25% to 40% response rates versus 1% to 3% for cold emails.",
     steps: [
       "Build a curated lead list with direct emails for your top 50 prospects",
@@ -14,9 +12,9 @@ const channels = [
     ],
   },
   {
-    icon: "🤝",
+    num: "02",
     name: "Referral Engine",
-    rate: "Highest close rate of any channel",
+    rate: "HIGHEST CLOSE RATE OF ANY CHANNEL",
     body: "Direct, contextual asks to 10 to 15 specific people in your existing network. One introduction from GreenLight Fund, Per Scholas, or Aspen is worth 50 cold emails. This is the most critical step in the entire 30-day plan.",
     steps: [
       "Identify your top 10 network connectors across GreenLight, Per Scholas, Aspen, Kresge",
@@ -26,9 +24,9 @@ const channels = [
     ],
   },
   {
-    icon: "📞",
+    num: "03",
     name: "Commission-Only SDR",
-    rate: "Zero upfront cost. Pay per meeting booked.",
+    rate: "ZERO UPFRONT COST — PAY PER MEETING BOOKED",
     body: "Hire a revenue-share appointment setter for cold leads only. $75 to $150 per qualified meeting booked. No meeting, no pay. This outsources the one part of business development you said makes your stomach turn.",
     steps: [
       "Find a commission-only appointment setter experienced in nonprofit or healthcare outreach",
@@ -40,27 +38,76 @@ const channels = [
 ];
 
 const OutreachStrategy = () => (
-  <section>
-    <SectionHeader
-      eyebrow="Outreach Strategy"
-      title={<>You do not need cold outreach.<br />Here is what <em className="italic text-primary">actually works</em> in your market.</>}
-      subtitle="In the nonprofit and mission-driven workforce sector, cold LinkedIn DM outreach damages reputation. Senior leaders receive 50+ automated messages per day. Here is the stack that actually converts."
-    />
+  <section className="w-full" style={{ background: '#0D0D0D' }}>
+    <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] py-24">
+      {/* Section Header */}
+      <div className="mb-16">
+        <div className="w-8 h-px bg-primary mb-6" />
+        <p className="text-[9px] font-bold tracking-[0.26em] uppercase text-primary mb-4">
+          Outreach Strategy
+        </p>
+        <h2
+          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 64, fontWeight: 300, lineHeight: 1.05, letterSpacing: '-0.01em' }}
+          className="text-white uppercase mb-4"
+        >
+          You do not need cold outreach.
+          <br />
+          Here is what{' '}
+          <em className="italic text-primary">actually works</em>{' '}
+          in your market.
+        </h2>
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: '#888', lineHeight: 1.9, maxWidth: 640 }}>
+          In the nonprofit and mission-driven workforce sector, cold LinkedIn DM outreach damages reputation. Senior leaders receive 50+ automated messages per day. Here is the stack that actually converts.
+        </p>
+      </div>
+    </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+    {/* Full-bleed panels */}
+    <div>
       {channels.map((ch, i) => (
-        <div key={i} className="bg-card border border-border p-7 shadow-sm card-lift hover:border-primary/25">
-          <span className="text-[28px] mb-[14px] block">{ch.icon}</span>
-          <div className="font-serif text-xl font-bold text-ink mb-[6px]">{ch.name}</div>
-          <span className="inline-block text-[13px] font-bold py-[3px] px-[10px] bg-primary/[0.08] text-primary mb-[14px] tracking-[0.06em]">{ch.rate}</span>
-          <p className="text-sm text-ash leading-[1.75] mb-[14px]">{ch.body}</p>
-          <ul>
-            {ch.steps.map((step, j) => (
-              <li key={j} className="text-sm text-charcoal py-[5px] border-b border-border last:border-b-0 flex gap-[7px]">
-                <span className="text-primary text-[13px] font-bold flex-shrink-0 mt-[2px]">→</span>{step}
-              </li>
-            ))}
-          </ul>
+        <div key={i}>
+          {i > 0 && <div className="w-full h-px" style={{ background: '#1a1a1a' }} />}
+          <div style={{ background: '#0D0D0D' }} className="w-full">
+            <div className="max-w-[1160px] mx-auto px-6 md:px-[60px] py-16">
+              <div
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 80, fontWeight: 300, lineHeight: 1 }}
+                className="text-primary mb-6"
+              >
+                {ch.num}
+              </div>
+              <h3
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 32, fontWeight: 400 }}
+                className="text-white uppercase mb-3"
+              >
+                {ch.name}
+              </h3>
+              <p
+                style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, letterSpacing: '0.2em' }}
+                className="text-primary mb-6"
+              >
+                {ch.rate}
+              </p>
+              <p
+                style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: '#888', lineHeight: 1.9, maxWidth: 640 }}
+                className="mb-8"
+              >
+                {ch.body}
+              </p>
+              <div>
+                {ch.steps.map((step, j) => (
+                  <div key={j}>
+                    {j > 0 && <div className="w-full h-px" style={{ background: '#1a1a1a' }} />}
+                    <p
+                      style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: '#888', lineHeight: 1.7 }}
+                      className="py-4"
+                    >
+                      {step}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       ))}
     </div>
