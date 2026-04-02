@@ -1,4 +1,3 @@
-import Ticker from "@/components/Ticker";
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 
@@ -20,7 +19,6 @@ const Index = () => (
     <CursorGlow />
     <NavBar />
     <Hero />
-    <Ticker />
     
     <CatalystSection />
     <DetroitDivider />
