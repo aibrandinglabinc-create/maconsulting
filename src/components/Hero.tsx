@@ -153,9 +153,6 @@ const Hero = () => (
         </div>
       </div>
 
-      <div className="relative z-[3] mt-auto">
-        <Ticker />
-      </div>
     </div>
   </section>
 );

@@ -1,6 +1,7 @@
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 
+import Ticker from "@/components/Ticker";
 import EcosystemNetworkSection from "@/components/EcosystemNetworkSection";
 import CatalystSection from "@/components/CatalystSection";
 import DetroitDivider from "@/components/DetroitDivider";
