@@ -18,8 +18,9 @@ import CursorGlow from "@/components/CursorGlow";
 const Index = () => (
   <div className="min-h-screen bg-fog">
     <CursorGlow />
-    <Ticker />
     <NavBar />
+    <Hero />
+    <Ticker />
     <Hero />
     
     <CatalystSection />
