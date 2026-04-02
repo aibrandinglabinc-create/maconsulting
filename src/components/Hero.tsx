@@ -1,7 +1,7 @@
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import Ticker from "@/components/Ticker";
+
 
 const Particles = () => {
   const ref = useRef<THREE.Points>(null);
