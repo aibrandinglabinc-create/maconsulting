@@ -82,7 +82,7 @@ const OrbGroup = () => {
 const HeroScene = () => (
   <Canvas
     camera={{ position: [0, 0, 5], fov: 60 }}
-    style={{ position: "absolute", inset: 0, zIndex: 0 }}
+    style={{ position: "absolute", inset: 0, zIndex: 5 }}
     gl={{ antialias: true, alpha: true }}
   >
     <ambientLight intensity={0.15} />
