@@ -10,7 +10,6 @@ import RevenueProjection from "@/components/RevenueProjection";
 import MonthOneScenarios from "@/components/MonthOneScenarios";
 import IdealClientAvatars from "@/components/IdealClientAvatars";
 import MarketValidation from "@/components/MarketValidation";
-import OfferArchitecture from "@/components/OfferArchitecture";
 import OutreachStrategy from "@/components/OutreachStrategy";
 import LockedLeadsSection from "@/components/LockedLeadsSection";
 import ClosingCTASection from "@/components/ClosingCTASection";
@@ -35,7 +34,6 @@ const Index = () => (
       <MonthOneScenarios />
       <IdealClientAvatars />
       <MarketValidation />
-      <OfferArchitecture />
     </div>
     <OutreachStrategy />
     <LockedLeadsSection />
