@@ -2,7 +2,7 @@ import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 
 import Ticker from "@/components/Ticker";
-import EcosystemNetworkSection from "@/components/EcosystemNetworkSection";
+
 import CatalystSection from "@/components/CatalystSection";
 import DetroitDivider from "@/components/DetroitDivider";
 import MarketReality from "@/components/MarketReality";
@@ -23,7 +23,6 @@ const Index = () => (
     <NavBar />
     <Hero />
     
-    <EcosystemNetworkSection />
     <CatalystSection />
     <DetroitDivider />
     <div className="w-full h-[40px] overflow-hidden flex items-center" style={{ background: '#0A0A0C', borderTop: '1px solid rgba(18,196,176,0.2)', borderBottom: '1px solid rgba(18,196,176,0.2)' }}>
